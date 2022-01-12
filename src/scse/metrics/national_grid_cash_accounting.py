@@ -74,9 +74,13 @@ class CashAccounting():
         # penalty scaled by capacity of battery
         G = state["network"]
 
+        # Exponential battery £/MWh function based on Tesla Megapack figures
+        # https://www.tesla.com/megapack/design
+        # Used generous £/$ exchange rate of 0.7
+        scaled_battery_penalty = 315242 * self._max_battery_capacity ** -0.039
         # Total battery CAPEX, ignoring discounting
         self._upfront_battery_cost = (
-            self._battery_penalty * self._max_battery_capacity * self._num_batteries
+            scaled_battery_penalty * self._max_battery_capacity * self._num_batteries
         )
         # Amortise battery CAPEX over lifetime
         # Even installments every simulation period (30 mins)
