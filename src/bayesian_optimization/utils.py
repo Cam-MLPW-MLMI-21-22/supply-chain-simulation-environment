@@ -14,18 +14,20 @@ def plot_3d_boundary(X, Y, mesh_X, mesh_Y,
                      dpi=100,
                      plot_ci=True,
                      title=None,
-                     save_fig_path=None):
+                     save_fig_path=None,
+                     dim1=1000,
+                     dim2=21):
 
     fig = plt.figure(figsize=(10, 10), dpi=dpi)
     ax = fig.gca(projection='3d')
     surf = ax.plot_surface(mesh_X, mesh_Y, mu_plot.reshape(
-        (1000, 21)), cmap='viridis', linewidth=0, antialiased=False, alpha=0.60)
+        (dim1, dim2)), cmap='viridis', linewidth=0, antialiased=False, alpha=0.60)
 
     if plot_ci:
         surf_var = ax.plot_surface(mesh_X, mesh_Y, (mu_plot-var_plot).reshape(
-            (1000, 21)), cmap='viridis', linewidth=0, antialiased=False, alpha=0.20)
+            (dim1, dim2)), cmap='viridis', linewidth=0, antialiased=False, alpha=0.20)
         surf_var = ax.plot_surface(mesh_X, mesh_Y, (mu_plot+var_plot).reshape(
-            (1000, 21)), cmap='viridis', linewidth=0, antialiased=False, alpha=0.20)
+            (dim1, dim2)), cmap='viridis', linewidth=0, antialiased=False, alpha=0.20)
 
     ax.scatter(X[:, 0].flatten(), X[:, 1].flatten(), Y.flatten(),
                s=100, marker="o", color="b", label="Initial observations")
