@@ -2,7 +2,7 @@ import logging
 
 from scse.api.module import Agent
 from scse.services.service_registry import singleton as registry
-from scse.constants.national_grid_constants import DEFAULT_BALANCE_SOURCE, ELECTRICITY_ASIN
+from scse.constants.national_grid_constants import DEFAULT_BALANCE_SOURCE, ELECTRICITY_ASIN, ENERGY_GENERATION_ASINS
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +23,8 @@ class ElectricitySupply(Agent):
         more robust solution.
         """
         self._supply_asin = self._DEFAULT_SUPPLY_ASIN
-        self._supply_forecast_service = registry.load_service('electricity_supply_forecast_service', run_parameters)
+        self._supply_forecast_service = registry.load_service(
+            'electricity_supply_forecast_service', run_parameters)
 
     def get_name(self):
         return 'vendor'
@@ -40,7 +41,7 @@ class ElectricitySupply(Agent):
         actions = []
         current_time = state['date_time']
         current_clock = state['clock']
-        
+
         G = state['network']
 
         # Get a list of substations - remember that these have the type `port` for now
@@ -48,12 +49,13 @@ class ElectricitySupply(Agent):
         for node, node_data in G.nodes(data=True):
             if node_data.get('node_type') in ['port']:
                 substations.append(node)
-        
+
         if len(substations) == 0:
             raise ValueError('Could not identify any substations.')
         elif len(substations) > 1:
-            raise ValueError('Identified multiple substations - this is not yet supported.')
-        
+            raise ValueError(
+                'Identified multiple substations - this is not yet supported.')
+
         substation = substations[0]
 
         # Create shipment from every vendor (i.e. electricity supply) to substation
@@ -63,16 +65,24 @@ class ElectricitySupply(Agent):
                 # Determine how the vendor produces electricity
                 generation_types = node_data.get('asins_produced')
                 if generation_types is None:
-                    raise ValueError('Expect all sources to have `asins_produced` property, indicating their generation type.')
+                    raise ValueError(
+                        'Expect all sources to have `asins_produced` property, indicating their generation type.')
                 elif len(generation_types) != 1:
-                    raise ValueError('All sources must have only one generation type - multiple not yet supported.')
-                
+                    raise ValueError(
+                        'All sources must have only one generation type - multiple not yet supported.')
+
                 generation_type = generation_types[0]
                 forecasted_supply = self._supply_forecast_service.get_forecast(
                     asin=generation_type, clock=current_clock, time=current_time
                 )
-                
-                logger.debug(f"Supply for {forecasted_supply} quantity of ASIN {generation_type}.")
+
+                wind_modulation = 0.3
+                if generation_type == ENERGY_GENERATION_ASINS.wind_onshore:
+                    forecasted_supply *= wind_modulation
+                    forecasted_supply = int(forecasted_supply)
+
+                logger.debug(
+                    f"Supply for {forecasted_supply} quantity of ASIN {generation_type}.")
 
                 # Note: The default ASIN is sent (i.e. electricity), regardless of generation type
                 action = {
