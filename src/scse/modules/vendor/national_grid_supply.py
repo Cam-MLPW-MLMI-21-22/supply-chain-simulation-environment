@@ -76,7 +76,7 @@ class ElectricitySupply(Agent):
                     asin=generation_type, clock=current_clock, time=current_time
                 )
 
-                wind_modulation = 0.3
+                wind_modulation = 1.0  # 1.35
                 if generation_type == ENERGY_GENERATION_ASINS.wind_onshore:
                     forecasted_supply *= wind_modulation
                     forecasted_supply = int(forecasted_supply)
