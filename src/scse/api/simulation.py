@@ -11,7 +11,10 @@ def run_simulation(logging_level=DEFAULT_RUN_PARAMETERS.simulation_logging_level
                    time_horizon=DEFAULT_RUN_PARAMETERS.time_horizon,
                    num_batteries=DEFAULT_RUN_PARAMETERS.num_batteries,
                    max_battery_capacity=DEFAULT_RUN_PARAMETERS.max_battery_capacity,
-                   battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty):
+                   battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
+                   discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
+                   charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
+                   surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator):
 
     logger = logging.getLogger()
     if logging_level == 'DEBUG':
@@ -21,7 +24,8 @@ def run_simulation(logging_level=DEFAULT_RUN_PARAMETERS.simulation_logging_level
 
     m = miniSCOTnotebook(simulation_seed, start_date, time_increment,
                          time_horizon, num_batteries, max_battery_capacity,
-                         battery_penalty)
+                         battery_penalty, discharge_discount, charging_discount,
+                         surge_modulator)
     cum_reward = m.run()
 
     return cum_reward

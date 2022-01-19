@@ -16,11 +16,14 @@ class _RunParameters(CoreRunParameters):
     simulation_logging_level = 'CRITICAL'
     num_batteries = 1  # 5
 
+    discharge_discount = 0.8
+    charging_discount = 1.05
+
     # Penalty and reward prices, w/ units £/MWh
     source_request_reward_penalty = -36.65
     sink_deposit_reward_penalty = 27.63
-    battery_drawdown_reward_penalty = (-0.8*36.65) * 0.1
-    battery_charging_reward_penalty = 1.05*27.63
+    battery_drawdown_reward_penalty = -36.65  # * discharge_discount
+    battery_charging_reward_penalty = 27.63  # * charging_discount
 
     # Other penalties
     transfer_penalty = 0  # 2
@@ -34,6 +37,8 @@ class _RunParameters(CoreRunParameters):
     init_battery_charge_frac = 0.5
     battery_penalty = -(200 * 1000)  # units in £/MWh
     lifetime_years = 15  # number of years over which price is spread
+
+    surge_modulator = 1.0  #  baseline (no surge = 1.0)
 
 
 DEFAULT_RUN_PARAMETERS = _RunParameters()

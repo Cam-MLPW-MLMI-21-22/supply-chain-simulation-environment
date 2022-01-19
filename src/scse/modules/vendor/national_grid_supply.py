@@ -3,6 +3,9 @@ import logging
 from scse.api.module import Agent
 from scse.services.service_registry import singleton as registry
 from scse.constants.national_grid_constants import DEFAULT_BALANCE_SOURCE, ELECTRICITY_ASIN, ENERGY_GENERATION_ASINS
+from scse.default_run_parameters.national_grid_default_run_parameters import (
+    DEFAULT_RUN_PARAMETERS
+)
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +28,8 @@ class ElectricitySupply(Agent):
         self._supply_asin = self._DEFAULT_SUPPLY_ASIN
         self._supply_forecast_service = registry.load_service(
             'electricity_supply_forecast_service', run_parameters)
+        self._surge_modulator = run_parameters.get(
+                'surge_modulator', DEFAULT_RUN_PARAMETERS.surge_modulator)
 
     def get_name(self):
         return 'vendor'
@@ -76,9 +81,8 @@ class ElectricitySupply(Agent):
                     asin=generation_type, clock=current_clock, time=current_time
                 )
 
-                wind_modulation = 1.0  # 1.35
                 if generation_type == ENERGY_GENERATION_ASINS.wind_onshore:
-                    forecasted_supply *= wind_modulation
+                    forecasted_supply *= self._surge_modulator
                     forecasted_supply = int(forecasted_supply)
 
                 logger.debug(
