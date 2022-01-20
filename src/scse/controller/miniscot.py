@@ -46,7 +46,10 @@ class SupplyChainEnvironment:
                  asin_selection=DEFAULT_RUN_PARAMETERS.asin_selection,
                  num_batteries=DEFAULT_RUN_PARAMETERS.num_batteries,
                  max_battery_capacity=DEFAULT_RUN_PARAMETERS.max_battery_capacity,
-                 battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty):
+                 battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
+                 discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
+                 charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
+                 surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator):
 
         self._program_start_time = time.time()
         self._miniscot_time_profile = {}
@@ -66,7 +69,10 @@ class SupplyChainEnvironment:
                                            asin_selection=asin_selection,
                                            num_batteries=num_batteries,
                                            max_battery_capacity=max_battery_capacity,
-                                           battery_penalty = battery_penalty)
+                                           battery_penalty=battery_penalty,
+                                           discharge_discount=discharge_discount,
+                                           charging_discount=charging_discount,
+                                           surge_modulator=surge_modulator)
                          for class_name in profile_config['metrics']]
 
         # TODO For now, only a single metric module is supported.
@@ -82,7 +88,10 @@ class SupplyChainEnvironment:
                                            time_horizon=time_horizon,
                                            asin_selection=asin_selection,
                                            num_batteries=num_batteries,
-                                           max_battery_capacity=max_battery_capacity)
+                                           max_battery_capacity=max_battery_capacity,
+                                           discharge_discount=discharge_discount,
+                                           charging_discount=charging_discount,
+                                           surge_modulator=surge_modulator)
                          for class_name in profile_config['modules']]
 
         current_program_time = time.time()

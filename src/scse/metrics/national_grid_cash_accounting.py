@@ -34,10 +34,10 @@ class CashAccounting():
         )
         self._holding_cost = run_parameters.get(
             'holding_cost', DEFAULT_RUN_PARAMETERS.holding_cost_penalty
-        )  # how much to reward/penalize battery use
+        )  #  how much to reward/penalize battery use
         self._transfer_cost = run_parameters.get(
             'transfer', DEFAULT_RUN_PARAMETERS.transfer_penalty
-        )  # cost to move from the batteries
+        )  #  cost to move from the batteries
 
         # Rewards/penalties for using BMRS and batteries
         self._source_request = run_parameters.get(
@@ -53,11 +53,17 @@ class CashAccounting():
             'battery_drawdown', DEFAULT_RUN_PARAMETERS.battery_drawdown_reward_penalty
         )
 
+        self._discharge_discount = run_parameters.get(
+                    'discharge_discount', DEFAULT_RUN_PARAMETERS.discharge_discount
+                )
+        self._charging_discount = run_parameters.get(
+                    'charging_discount', DEFAULT_RUN_PARAMETERS.charging_discount
+                )
+
         # Other penalties
         self._lost_demand_penalty = run_parameters.get(
             'lost_demand', DEFAULT_RUN_PARAMETERS.lost_demand_penalty
         )
-        
 
     def reset(self, context, state):
         self._context = {}
@@ -145,12 +151,12 @@ class CashAccounting():
 
             # case 1: charge battery_idx
             if action['origin'] == "Substation" and "Battery" in action["destination"]:
-                transfer_revenue = self._battery_charging * quantity
+                transfer_revenue = self._battery_charging * quantity * self._charging_discount
 
             # case 2: discharge/drawdown electricity from battery
             # cost of charging a battery
             if action['destination'] == "Substation" and "Battery" in action["origin"]:
-                transfer_revenue = self._battery_drawdown * quantity
+                transfer_revenue = self._battery_drawdown * quantity * self._discharge_discount
 
             self._timestep_transfer_cost += transfer_revenue
 

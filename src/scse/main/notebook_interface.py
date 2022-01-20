@@ -4,17 +4,19 @@ from scse.default_run_parameters.national_grid_default_run_parameters import DEF
 
 class miniSCOTnotebook():
 
-
     def __init__(
-        self,
-        simulation_seed=DEFAULT_RUN_PARAMETERS.simulation_seed,
-        start_date=DEFAULT_RUN_PARAMETERS.start_date,
-        time_increment=DEFAULT_RUN_PARAMETERS.time_increment,
-        time_horizon=DEFAULT_RUN_PARAMETERS.time_horizon,
-        num_batteries=DEFAULT_RUN_PARAMETERS.num_batteries,
-        max_battery_capacity=DEFAULT_RUN_PARAMETERS.max_battery_capacity,
-        battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty
-        ):
+            self,
+            simulation_seed=DEFAULT_RUN_PARAMETERS.simulation_seed,
+            start_date=DEFAULT_RUN_PARAMETERS.start_date,
+            time_increment=DEFAULT_RUN_PARAMETERS.time_increment,
+            time_horizon=DEFAULT_RUN_PARAMETERS.time_horizon,
+            num_batteries=DEFAULT_RUN_PARAMETERS.num_batteries,
+            max_battery_capacity=DEFAULT_RUN_PARAMETERS.max_battery_capacity,
+            battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
+            discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
+            charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
+            surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator
+            ):
 
         self.profile = DEFAULT_RUN_PARAMETERS.run_profile
         self.asin_selection = DEFAULT_RUN_PARAMETERS.asin_selection
@@ -25,6 +27,9 @@ class miniSCOTnotebook():
         self.num_batteries = num_batteries
         self.max_battery_capacity = max_battery_capacity
         self.battery_penalty = battery_penalty
+        self.discharge_discount = discharge_discount
+        self.charging_discount = charging_discount
+        self.surge_modulator = surge_modulator
 
         self.start(simulation_seed=self.simulation_seed,
                    start_date=self.start_date,
@@ -34,7 +39,10 @@ class miniSCOTnotebook():
                    asin_selection=self.asin_selection,
                    profile=self.profile,
                    max_battery_capacity=self.max_battery_capacity,
-                   battery_penalty=self.battery_penalty)
+                   battery_penalty=self.battery_penalty,
+                   discharge_discount=self.discharge_discount,
+                   charging_discount=self.charging_discount,
+                   surge_modulator=self.surge_modulator)
 
         # The cumulative reward at each time step i.e. the episode reward for each time-step
         self.cum_reward = []
