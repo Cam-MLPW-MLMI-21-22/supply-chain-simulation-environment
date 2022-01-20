@@ -30,6 +30,10 @@ class ElectricitySupply(Agent):
             'electricity_supply_forecast_service', run_parameters)
         self._surge_modulator = run_parameters.get(
                 'surge_modulator', DEFAULT_RUN_PARAMETERS.surge_modulator)
+        self._solar_surge_modulator = run_parameters.get(
+                'solar_surge_modulator', DEFAULT_RUN_PARAMETERS.solar_surge_modulator)
+        self._surge_scenario = run_parameters.get(
+                'surge_scenario', DEFAULT_RUN_PARAMETERS.surge_scenario)
 
     def get_name(self):
         return 'vendor'
@@ -81,9 +85,30 @@ class ElectricitySupply(Agent):
                     asin=generation_type, clock=current_clock, time=current_time
                 )
 
-                if generation_type == ENERGY_GENERATION_ASINS.wind_onshore:
-                    forecasted_supply *= self._surge_modulator
-                    forecasted_supply = int(forecasted_supply)
+                # model variety of supply surge scenarios
+                if self._surge_scenario == "wind":
+                    if generation_type == ENERGY_GENERATION_ASINS.wind_offshore:
+                        # run wind surge for one week
+                        #  number of timesteps per week (hard-coded)
+                        if current_clock < DEFAULT_RUN_PARAMETERS.timesteps_per_week:
+                            forecasted_supply *= self._surge_modulator
+                            forecasted_supply = int(forecasted_supply)
+                elif self._surge_scenario == "solar":
+                    if generation_type == ENERGY_GENERATION_ASINS.solar:
+                        # run solar surge for one week
+                        if current_clock < DEFAULT_RUN_PARAMETERS.timesteps_per_week:
+                            forecasted_supply *= self._solar_surge_modulator
+                            forecasted_supply = int(forecasted_supply)
+                elif self._surge_scenario == "wind+solar":
+                    # wind for one week, solar for next
+                    if generation_type == ENERGY_GENERATION_ASINS.wind_offshore:
+                        if current_clock < DEFAULT_RUN_PARAMETERS.timesteps_per_week:
+                            forecasted_supply *= self._surge_modulator
+                            forecasted_supply = int(forecasted_supply)
+                    elif generation_type == ENERGY_GENERATION_ASINS.solar:
+                        if current_clock < DEFAULT_RUN_PARAMETERS.timesteps_per_week:
+                            forecasted_supply *= self._solar_surge_modulator
+                            forecasted_supply = int(forecasted_supply)
 
                 logger.debug(
                     f"Supply for {forecasted_supply} quantity of ASIN {generation_type}.")

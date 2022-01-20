@@ -49,7 +49,9 @@ class SupplyChainEnvironment:
                  battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
                  discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
                  charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
-                 surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator):
+                 surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator,
+                 solar_surge_modulator=DEFAULT_RUN_PARAMETERS.solar_surge_modulator,
+                 surge_scenario=DEFAULT_RUN_PARAMETERS.surge_scenario):
 
         self._program_start_time = time.time()
         self._miniscot_time_profile = {}

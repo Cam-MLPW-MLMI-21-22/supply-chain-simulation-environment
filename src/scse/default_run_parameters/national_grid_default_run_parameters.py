@@ -33,11 +33,15 @@ class _RunParameters(CoreRunParameters):
     # for now, assumes all batteries are of same capacity
     # TODO: modify to handle capacity which scales with cost
     max_battery_capacity = 150  # units in MWh; current sites typically 50 MWh
-    init_battery_charge_frac = 0.5  # fraction of charge in the batteries at the beginning
-    battery_penalty = -(200 * 1000) # units in £/MWh
-    lifetime_years = 15 # number of years over which price is spread
+    # fraction of charge in the batteries at the beginning
+    init_battery_charge_frac = 0.5
+    battery_penalty = -(200 * 1000)  # units in £/MWh
+    lifetime_years = 15  # number of years over which price is spread
 
     surge_modulator = 1.0  #  baseline (no surge = 1.0)
+    solar_surge_modulator = 1.0
+    surge_scenario = "wind"  #  options = {"wind", "solar", "wind+solar"}
+    timesteps_per_week = 336
 
 
 DEFAULT_RUN_PARAMETERS = _RunParameters()

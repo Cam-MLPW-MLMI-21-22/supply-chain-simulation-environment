@@ -15,7 +15,9 @@ class miniSCOTnotebook():
             battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
             discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
             charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
-            surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator
+            surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator,
+            solar_surge_modulator=DEFAULT_RUN_PARAMETERS.solar_surge_modulator,
+            surge_scenario=DEFAULT_RUN_PARAMETERS.surge_scenario
             ):
 
         self.profile = DEFAULT_RUN_PARAMETERS.run_profile
@@ -30,6 +32,8 @@ class miniSCOTnotebook():
         self.discharge_discount = discharge_discount
         self.charging_discount = charging_discount
         self.surge_modulator = surge_modulator
+        self.solar_surge_modulator = solar_surge_modulator
+        self.surge_scenario = surge_scenario
 
         self.start(simulation_seed=self.simulation_seed,
                    start_date=self.start_date,
@@ -42,7 +46,10 @@ class miniSCOTnotebook():
                    battery_penalty=self.battery_penalty,
                    discharge_discount=self.discharge_discount,
                    charging_discount=self.charging_discount,
-                   surge_modulator=self.surge_modulator)
+                   surge_modulator=self.surge_modulator,
+                   solar_surge_modulator=self.solar_surge_modulator,
+                   surge_scenario=self.surge_scenario
+                   )
 
         # The cumulative reward at each time step i.e. the episode reward for each time-step
         self.cum_reward = []

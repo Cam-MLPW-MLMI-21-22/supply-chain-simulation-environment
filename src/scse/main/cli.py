@@ -30,7 +30,12 @@ class MiniSCOTDebuggerApp(cmd2.Cmd):
                     profile=DEFAULT_RUN_PARAMETERS.run_profile,
                     num_batteries=DEFAULT_RUN_PARAMETERS.num_batteries,
                     max_battery_capacity=DEFAULT_RUN_PARAMETERS.max_battery_capacity,
-                    battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty)
+                    battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
+                    discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
+                    charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
+                    surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator,
+                    solar_surge_modulator=DEFAULT_RUN_PARAMETERS.solar_surge_modulator,
+                    surge_scenario=DEFAULT_RUN_PARAMETERS.surge_scenario)
 
         self._set_prompt()
 
