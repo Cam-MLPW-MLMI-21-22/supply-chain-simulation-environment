@@ -37,5 +37,5 @@ class _RunParameters(CoreRunParameters):
     battery_penalty = -(200 * 1000) # units in £/MWh
     lifetime_years = 15 # number of years over which price is spread
 
-ç
+
 DEFAULT_RUN_PARAMETERS = _RunParameters()
