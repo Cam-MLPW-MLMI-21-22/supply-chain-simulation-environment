@@ -41,7 +41,9 @@ class _RunParameters(CoreRunParameters):
     surge_modulator = 1.0  #  baseline (no surge = 1.0)
     solar_surge_modulator = 1.0
     surge_scenario = "wind"  #  options = {"wind", "solar", "wind+solar"}
-    timesteps_per_week = 336
+    timesteps_per_day = 48
+    days_wind_surge = 3
+    days_solar_surge = 7
 
 
 DEFAULT_RUN_PARAMETERS = _RunParameters()
