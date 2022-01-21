@@ -35,16 +35,20 @@ def plot_3d_boundary(X, Y, mesh_X, mesh_Y,
                    new_Y.flatten(), marker="x", color="r", label="All observations", s=100)
 
     ax.grid(True)
+
     ax.set_xlabel("Num batteries")
-    ax.set_ylabel("Battery capacity")
-    ax.set_zlabel("Cumulative reward")
+    ax.set_ylabel("Battery capacity (MWh)")
+    ax.set_zlabel("Cumulative reward (£)")
+
+    plt.rcParams['xtick.major.pad'] = '1'
+    plt.rcParams['ytick.major.pad'] = '1'
 
     if z_lims:
         ax.set_zlim(z_lims)
 
     if title:
         plt.title(title)
-    plt.legend(loc='upper right', prop={'size': 15})
+    plt.legend(loc='upper right', prop={'size': 20})
 
     if save_fig_path:
         for theta in range(0, 360, 10):
@@ -87,12 +91,17 @@ def plot_3d_observed_rewards(X, Y,
         im = ax.plot_trisurf(X[:, 0].flatten(), X[:, 1].flatten(
         ), Y.flatten(), cmap='viridis', alpha=0.70)
 
-    ax.legend(loc=1, prop={'size': 15})
+    ax.legend(loc=1, prop={'size': 20})
     ax.set_xlabel("Num batteries")
-    ax.set_ylabel("Battery capacity")
-    ax.set_zlabel("Cumulative reward")
+    ax.set_ylabel("Battery capacity (MWh)")
+    ax.set_zlabel("Cumulative reward (£)")
+
+    # Battery Penalty:  £/ MWh
 
     ax.view_init(elev=elev, azim=angle)
+
+    plt.rcParams['xtick.major.pad'] = '1'
+    plt.rcParams['ytick.major.pad'] = '1'
 
     if z_lims:
         ax.set_zlim(z_lims)
