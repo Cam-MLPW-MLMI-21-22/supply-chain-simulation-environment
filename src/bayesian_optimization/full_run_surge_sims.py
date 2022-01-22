@@ -72,7 +72,7 @@ max_battery_penalty = DEFAULT_RUN_PARAMETERS.battery_penalty + 200000
 min_battery_capacity = 1
 max_battery_capacity = 80
 
-num_data_points = 2  # 10
+num_data_points = 10
 
 
 # def invoke_miniscot(x):
@@ -149,7 +149,7 @@ def plot_reward(X, Y, labels):
 main_save_dir = "./surge_results"
 
 # univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
-univariate_surge = [1.0]  # [0.1, 0.5, 0.7, 1.0, 1.2, 2.0]
+univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 2.0]
 
 bivariate_surge = itertools.product([1.2, 1.5, 3.0], [0.1, 0.3, 0.7])
 
@@ -161,9 +161,9 @@ surge_vals = {"wind": [(surge_val, 1.0) for surge_val in univariate_surge],
 
 # for scenario in surge_scenarios:
 #     for network_param_scenario in network_param_scenarios:
-for scenario in surge_scenarios[:1]:
-    for network_param_scenario in network_param_scenarios[:1]:
-        save_dir = f"{main_save_dir}/{scenario}/network_param_scenario"
+for scenario in surge_scenarios:
+    for network_param_scenario in network_param_scenarios:
+        save_dir = f"{main_save_dir}/{scenario}/{network_param_scenario}"
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
 
@@ -324,7 +324,7 @@ for scenario in surge_scenarios[:1]:
                                                              batch_size=batch_size)
 
                     # Run the loop and extract the optimum;  we either complete 10 steps or converge
-                    max_iters = 1  # 10
+                    max_iters = 10
                     stopping_condition = (
                         FixedIterationsStoppingCondition(
                             i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
