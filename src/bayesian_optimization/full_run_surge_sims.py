@@ -34,6 +34,7 @@ from matplotlib import cm
 import numpy as np
 import GPy
 import os
+import pandas as pd
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -179,8 +180,8 @@ for scenario in surge_scenarios[:1]:
         for (wind_mod, solar_mod) in surge_vals[scenario]:
 
             out_file.write(
-                f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}")
-            out_file.write(f"Wind: {wind_mod}, Solar: {solar_mod}")
+                f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}\n")
+            out_file.write(f"Wind: {wind_mod}, Solar: {solar_mod}\n")
 
             num_batteries = DiscreteParameter(
                 'num_batteries', range(0, max_num_batteries+1))
@@ -292,7 +293,7 @@ for scenario in surge_scenarios[:1]:
 
             while not successful_sample and num_tries < max_num_tries:
 
-                out_file.write(f"CURRENT ATTEMPT #{num_tries}")
+                out_file.write(f"\nCURRENT ATTEMPT #{num_tries}")
 
                 # emulator model
 
@@ -306,7 +307,7 @@ for scenario in surge_scenarios[:1]:
 
                 try:
                     gpy_model.optimize()
-                    out_file.write("okay to optimize")
+                    out_file.write("\nokay to optimize")
                     model_emukit = GPyModelWrapper(gpy_model)
 
                     # Load core elements for Bayesian optimization
@@ -330,7 +331,7 @@ for scenario in surge_scenarios[:1]:
                     )
 
                     bayesopt_loop.run_loop(f_multiprocess, stopping_condition)
-                    out_file.write("successfully ran loop")
+                    out_file.write("\nsuccessfully ran loop\n")
                     successful_sample = True
 
                 except:
@@ -380,9 +381,9 @@ for scenario in surge_scenarios[:1]:
             results = bayesopt_loop.get_results()
             # , results.best_found_value_per_iteration
             out_file.write(
-                f"Best: {results.minimum_location}, Val: {results.minimum_value}")
+                f"\nBest: {results.minimum_location}, Val: {results.minimum_value}\n")
             opt_loc = results.minimum_location[0]
-            res_file.write(opt_loc)
+            res_file.write(f"{opt_loc}\n")
             stored_opt_locs.append(opt_loc)
             stored_scenarios.append(scenario)
             stored_param_scenarios.append(network_param_scenario)
