@@ -1,0 +1,48 @@
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
+Wind: 0.1, Solar: 1.0
+Getting 10 initial simulation points took 380.0 seconds
+CURRENT ATTEMPT #0
+okay to optimize
+successfully ran loop
+
+Best: [335.], Val: 10359452.4118875
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
+Wind: 0.5, Solar: 1.0
+Getting 10 initial simulation points took 375.0 seconds
+CURRENT ATTEMPT #0
+okay to optimize
+successfully ran loop
+
+Best: [446.], Val: 7092649.080848584
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
+Wind: 0.7, Solar: 1.0
+Getting 10 initial simulation points took 1282.0 seconds
+CURRENT ATTEMPT #0
+okay to optimize
+successfully ran loop
+
+Best: [428.], Val: 5513102.069814314
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
+Wind: 1.0, Solar: 1.0
+Getting 10 initial simulation points took 352.0 seconds
+CURRENT ATTEMPT #0
+okay to optimize
+successfully ran loop
+
+Best: [437.], Val: 3302690.712581446
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
+Wind: 1.2, Solar: 1.0
+Getting 10 initial simulation points took 2312.0 seconds
+CURRENT ATTEMPT #0
+okay to optimize
+successfully ran loop
+
+Best: [431.], Val: 1951151.227070016
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
+Wind: 2.0, Solar: 1.0
+Getting 10 initial simulation points took 354.0 seconds
+CURRENT ATTEMPT #0
+okay to optimize
+successfully ran loop
+
+Best: [383.], Val: -3179565.030521286

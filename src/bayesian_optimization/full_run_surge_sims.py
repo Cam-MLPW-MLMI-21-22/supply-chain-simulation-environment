@@ -72,7 +72,7 @@ max_battery_penalty = DEFAULT_RUN_PARAMETERS.battery_penalty + 200000
 min_battery_capacity = 1
 max_battery_capacity = 80
 
-num_data_points = 10
+num_data_points = 20
 
 # Basic plotting function
 
@@ -143,6 +143,9 @@ for scenario in surge_scenarios:
         stored_param_scenarios = []
 
         for (wind_mod, solar_mod) in surge_vals[scenario]:
+
+            single_res_file = open(
+                f"{save_dir}/results_{wind_mod}_{solar_mod}.txt", "w")
 
             out_file.write(
                 f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}\n")
@@ -285,7 +288,7 @@ for scenario in surge_scenarios:
                                                              batch_size=batch_size)
 
                     # Run the loop and extract the optimum;  we either complete 10 steps or converge
-                    max_iters = 10
+                    max_iters = 5
                     stopping_condition = (
                         FixedIterationsStoppingCondition(
                             i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
@@ -341,6 +344,8 @@ for scenario in surge_scenarios:
                 f"\nBest: {results.minimum_location}, Val: {results.minimum_value}\n")
             opt_loc = results.minimum_location[0]
             res_file.write(f"{opt_loc}\n")
+            single_res_file.write(str(opt_loc))
+            single_res_file.close()
             stored_opt_locs.append(opt_loc)
             stored_scenarios.append(scenario)
             stored_param_scenarios.append(network_param_scenario)
