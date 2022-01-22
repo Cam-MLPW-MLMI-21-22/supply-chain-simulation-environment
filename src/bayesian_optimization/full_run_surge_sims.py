@@ -33,6 +33,7 @@ from matplotlib import pyplot as plt
 from matplotlib import cm
 import numpy as np
 import GPy
+import os
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -70,7 +71,7 @@ max_battery_penalty = DEFAULT_RUN_PARAMETERS.battery_penalty + 200000
 min_battery_capacity = 1
 max_battery_capacity = 80
 
-num_data_points = 10
+num_data_points = 2  # 10
 
 
 # def invoke_miniscot(x):
@@ -140,13 +141,6 @@ def plot_reward(X, Y, labels):
     return fig, ax
 
 
-for i in range(5):
-    x = i + 2
-
-    def sample_func(x):
-        print(x, i)
-
-
 # ## Run Experiments
 
 # In[10]:
@@ -154,7 +148,7 @@ for i in range(5):
 main_save_dir = "./surge_results"
 
 # univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
-univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 2.0]
+univariate_surge = [1.0]  # [0.1, 0.5, 0.7, 1.0, 1.2, 2.0]
 
 bivariate_surge = itertools.product([1.2, 1.5, 3.0], [0.1, 0.3, 0.7])
 
@@ -164,13 +158,29 @@ surge_vals = {"wind": [(surge_val, 1.0) for surge_val in univariate_surge],
               "solar": [(1.0, surge_val) for surge_val in univariate_surge],
               "wind+solar": bivariate_surge}
 
-for scenario in surge_scenarios:
-    for network_param_scenario in network_param_scenarios:
+# for scenario in surge_scenarios:
+#     for network_param_scenario in network_param_scenarios:
+for scenario in surge_scenarios[:1]:
+    for network_param_scenario in network_param_scenarios[:1]:
+        save_dir = f"{main_save_dir}/{scenario}/network_param_scenario"
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+
+        out_file = open(f"{save_dir}/temp_out.txt", "w")
+        res_file = open(f"{save_dir}/results.txt", "w")
+
+        stored_opt_locs = []
+        stored_wind_mod = []
+        stored_wind_mod = []
+        stored_scenarios = []
+        stored_solar_mod = []
+        stored_param_scenarios = []
+
         for (wind_mod, solar_mod) in surge_vals[scenario]:
 
-            print(
+            out_file.write(
                 f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}")
-            print(f"Wind: {wind_mod}, Solar: {solar_mod}")
+            out_file.write(f"Wind: {wind_mod}, Solar: {solar_mod}")
 
             num_batteries = DiscreteParameter(
                 'num_batteries', range(0, max_num_batteries+1))
@@ -264,7 +274,7 @@ for scenario in surge_scenarios:
             start = time.time()
             Y = f_multiprocess(X)
             end = time.time()
-            print("Getting {} initial simulation points took {} seconds".format(
+            out_file.write("Getting {} initial simulation points took {} seconds".format(
                 num_data_points, round(end - start, 0)))
 
             # ### Check the cum. reward from the initial points to ensure we are seeing reasonable behaviour before fitting
@@ -282,7 +292,7 @@ for scenario in surge_scenarios:
 
             while not successful_sample and num_tries < max_num_tries:
 
-                print(f"CURRENT ATTEMPT #{num_tries}")
+                out_file.write(f"CURRENT ATTEMPT #{num_tries}")
 
                 # emulator model
 
@@ -296,7 +306,7 @@ for scenario in surge_scenarios:
 
                 try:
                     gpy_model.optimize()
-                    print("okay to optimize")
+                    out_file.write("okay to optimize")
                     model_emukit = GPyModelWrapper(gpy_model)
 
                     # Load core elements for Bayesian optimization
@@ -313,14 +323,14 @@ for scenario in surge_scenarios:
                                                              batch_size=batch_size)
 
                     # Run the loop and extract the optimum;  we either complete 10 steps or converge
-                    max_iters = 10
+                    max_iters = 1  # 10
                     stopping_condition = (
                         FixedIterationsStoppingCondition(
                             i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
                     )
 
                     bayesopt_loop.run_loop(f_multiprocess, stopping_condition)
-                    print("successfully ran loop")
+                    out_file.write("successfully ran loop")
                     successful_sample = True
 
                 except:
@@ -365,9 +375,24 @@ for scenario in surge_scenarios:
             plt.yticks(fontsize=13)
             plt.xticks(fontsize=13)
             # plt.show()
-            plt.savefig(f"{main_save_dir}/surge.png")
+            plt.savefig(f"{save_dir}/wind_{wind_mod}_solar_{solar_mod}.png")
 
             results = bayesopt_loop.get_results()
             # , results.best_found_value_per_iteration
-            print(
+            out_file.write(
                 f"Best: {results.minimum_location}, Val: {results.minimum_value}")
+            opt_loc = results.minimum_location[0]
+            res_file.write(opt_loc)
+            stored_opt_locs.append(opt_loc)
+            stored_scenarios.append(scenario)
+            stored_param_scenarios.append(network_param_scenario)
+            stored_wind_mod.append(wind_mod)
+            stored_solar_mod.append(solar_mod)
+
+        out_file.close()
+        res_file.close()
+
+        res_df = pd.DataFrame({"Optimum": stored_opt_locs, "Solar Surge Factor": stored_solar_mod,
+                               "Wind Surge Factor": stored_wind_mod, "Network Parameter Scenario": stored_param_scenarios,
+                               "Surge Scenario": stored_scenarios})
+        res_df.to_csv(f"{save_dir}/results.csv")

@@ -1,0 +1,1 @@
+Network Param Scenario: Baseline (20 % Discount), Surge Scenario: windWind: 0.1, Solar: 1.0
