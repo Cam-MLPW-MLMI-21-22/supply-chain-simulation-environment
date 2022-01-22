@@ -1,3 +1,4 @@
+import itertools
 from scse.default_run_parameters.national_grid_default_run_parameters import DEFAULT_RUN_PARAMETERS
 from loop import *
 from tqdm.auto import tqdm
@@ -72,83 +73,36 @@ max_battery_capacity = 80
 num_data_points = 10
 
 
-def invoke_miniscot(x):
-    """
-    Handling single API call to miniSCOT simulation given some inputs
-
-    x contains parameter configs x = [x0 x1 ...]
-    - The order of parameters in x should follow the order specified in the parameter_space declaration
-    - E.g. here we specify num_batteries = x[0]
-    """
-
-    kwargs = {
-        'time_horizon': time_horizon_value,
-        'num_batteries': int(x[0])
-    }
-
-    kwargs.update(all_scenarios[scenario])
-
-
-#     kwargs["surge_modulator"] = 1.5
-#     kwargs["solar_surge_modulator"] = 0.5
-#     kwargs["surge_scenario"] = "wind+solar"
-
-    kwargs["surge_modulator"] = 1.0
-    kwargs["solar_surge_modulator"] = 0.5
-    kwargs["surge_scenario"] = "solar"
-
-    cum_reward = run_simulation(**kwargs)
-
-    return cum_reward[-1]
-
-
-# In[7]:
-
-
-def f(X):
-    """
-    Handling multiple API calls to miniSCOT simulation given some inputs
-
-    X is a matrix of parameters
-    - Each row is a set of parameters
-    - The order of parameters in the row should follow the order specified in the parameter_space declaration
-    """
-    Y = []
-    for x in X:
-        cum_reward = invoke_miniscot(x)
-
-        # Note that we negate the reward; want to find min
-        Y.append(-cum_reward[-1])
-
-    Y = np.reshape(np.array(Y), (-1, 1))
-    return Y
-
-
-# In[8]:
-
-
-def f_multiprocess(X):
-    """
-    Handling multiple API calls to miniSCOT simulation given some inputs using multiprocessing.
-
-    X is a matrix of parameters
-    - Each row is a set of parameters
-    - The order of parameters in the row should follow the order specified in the parameter_space declaration
-    """
-
-    # Set to None to use all available CPU
-    max_pool = 5
-    with Pool(max_pool) as p:
-        Y = list(
-            tqdm(
-                p.imap(invoke_miniscot, X),
-                total=X.shape[0]
-            )
-        )
-
-    # Note that we negate the reward; want to find min
-    Y = -np.reshape(np.array(Y), (-1, 1))
-    return Y
+# def invoke_miniscot(x):
+#     """
+#     Handling single API call to miniSCOT simulation given some inputs
+#
+#     x contains parameter configs x = [x0 x1 ...]
+#     - The order of parameters in x should follow the order specified in the parameter_space declaration
+#     - E.g. here we specify num_batteries = x[0]
+#     """
+#
+#     num_batteries, network_param_scenario, scenario, wind_mod, solar_mod = x
+#
+#     kwargs = {
+#         'time_horizon': time_horizon_value,
+#         'num_batteries': int(num_batteries)
+#     }
+#
+#     kwargs.update(all_scenarios[network_param_scenario])
+#
+#
+# #     kwargs["surge_modulator"] = 1.5
+# #     kwargs["solar_surge_modulator"] = 0.5
+# #     kwargs["surge_scenario"] = "wind+solar"
+#
+#     kwargs["surge_modulator"] = wind_mod
+#     kwargs["solar_surge_modulator"] = solar_mod
+#     kwargs["surge_scenario"] = scenario
+#
+#     cum_reward = run_simulation(**kwargs)
+#
+#     return cum_reward[-1]
 
 
 # In[9]:
@@ -186,137 +140,234 @@ def plot_reward(X, Y, labels):
     return fig, ax
 
 
+for i in range(5):
+    x = i + 2
+
+    def sample_func(x):
+        print(x, i)
+
+
 # ## Run Experiments
 
 # In[10]:
 
 main_save_dir = "./surge_results"
 
+# univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
+univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 2.0]
 
-for network_param_scenario in network_param_scenarios:
-    for scenario in surge_scenarios:
-        print(
-            f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}")
+bivariate_surge = itertools.product([1.2, 1.5, 3.0], [0.1, 0.3, 0.7])
 
-        num_batteries = DiscreteParameter(
-            'num_batteries', range(0, max_num_batteries+1))
+# surge vals stored as (wind_mod, solar_mod)
 
-        parameters = [num_batteries]
-        parameter_space = ParameterSpace(parameters)
-        # Get and check the parameters of the intial values (X)
+surge_vals = {"wind": [(surge_val, 1.0) for surge_val in univariate_surge],
+              "solar": [(1.0, surge_val) for surge_val in univariate_surge],
+              "wind+solar": bivariate_surge}
 
-        design = RandomDesign(parameter_space)
-        X = design.get_samples(num_data_points)
-        print(X)
+for scenario in surge_scenarios:
+    for network_param_scenario in network_param_scenarios:
+        for (wind_mod, solar_mod) in surge_vals[scenario]:
 
-        # ### Get initial data points
+            print(
+                f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}")
+            print(f"Wind: {wind_mod}, Solar: {solar_mod}")
 
-        design = RandomDesign(parameter_space)
+            num_batteries = DiscreteParameter(
+                'num_batteries', range(0, max_num_batteries+1))
 
-        start = time.time()
-        Y = f_multiprocess(X)
-        end = time.time()
-        print("Getting {} initial simulation points took {} seconds".format(
-            num_data_points, round(end - start, 0)))
+            # parameters = [num_batteries, network_param_scenario,
+            #               scenario, wind_mod, solar_mod]
+            parameters = [num_batteries]
+            parameter_space = ParameterSpace(parameters)
+            # Get and check the parameters of the intial values (X)
 
-        # ### Check the cum. reward from the initial points to ensure we are seeing reasonable behaviour before fitting
+            design = RandomDesign(parameter_space)
+            X = design.get_samples(num_data_points)
+            print(X)
 
-        # In[14]:
+            def invoke_miniscot(x):
+                """
+                Handling single API call to miniSCOT simulation given some inputs
 
-        plot_reward(X, Y, parameter_space.parameter_names)
+                x contains parameter configs x = [x0 x1 ...]
+                - The order of parameters in x should follow the order specified in the parameter_space declaration
+                - E.g. here we specify num_batteries = x[0]
+                """
+                kwargs = {
+                    'time_horizon': time_horizon_value,
+                    'num_batteries': int(x[0])
+                }
 
-        successful_sample = False
-        num_tries = 0
-        max_num_tries = 3
+                kwargs.update(all_scenarios[network_param_scenario])
 
-        use_default = False
-        use_ard = False
+            #     kwargs["surge_modulator"] = 1.5
+            #     kwargs["solar_surge_modulator"] = 0.5
+            #     kwargs["surge_scenario"] = "wind+solar"
 
-        while not successful_sample and num_tries < max_num_tries:
+                kwargs["surge_modulator"] = wind_mod
+                kwargs["solar_surge_modulator"] = solar_mod
+                kwargs["surge_scenario"] = scenario
 
-            print(f"CURRENT ATTEMPT #{num_tries}")
+                cum_reward = run_simulation(**kwargs)
 
-            # emulator model
+                return cum_reward[-1]
 
-            if use_default:
-                gpy_model = GPRegression(X, Y)
-            else:
-                kernel = GPy.kern.RBF(1, lengthscale=1e1,
-                                      variance=1e4, ARD=use_ard)
-                gpy_model = GPy.models.GPRegression(
-                    X, Y, kernel, noise_var=1e-10)
+            # In[7]:
 
-            try:
-                gpy_model.optimize()
-                print("okay to optimize")
-                model_emukit = GPyModelWrapper(gpy_model)
+            def f(X):
+                """
+                Handling multiple API calls to miniSCOT simulation given some inputs
 
-                # Load core elements for Bayesian optimization
-                expected_improvement = ExpectedImprovement(model=model_emukit)
-                optimizer = GradientAcquisitionOptimizer(space=parameter_space)
+                X is a matrix of parameters
+                - Each row is a set of parameters
+                - The order of parameters in the row should follow the order specified in the parameter_space declaration
+                """
+                Y = []
+                for x in X:
+                    cum_reward = invoke_miniscot(x)
 
-                # Create the Bayesian optimization object
-                batch_size = 3
-                bayesopt_loop = BayesianOptimizationLoop(model=model_emukit,
-                                                         space=parameter_space,
-                                                         acquisition=expected_improvement,
-                                                         batch_size=batch_size)
+                    # Note that we negate the reward; want to find min
+                    Y.append(-cum_reward[-1])
 
-                # Run the loop and extract the optimum;  we either complete 10 steps or converge
-                max_iters = 10
-                stopping_condition = (
-                    FixedIterationsStoppingCondition(
-                        i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
-                )
+                Y = np.reshape(np.array(Y), (-1, 1))
+                return Y
 
-                bayesopt_loop.run_loop(f_multiprocess, stopping_condition)
-                print("successfully ran loop")
-                successful_sample = True
+            # In[8]:
 
-            except:
-                num_tries += 1
+            def f_multiprocess(X):
+                """
+                Handling multiple API calls to miniSCOT simulation given some inputs using multiprocessing.
 
+                X is a matrix of parameters
+                - Each row is a set of parameters
+                - The order of parameters in the row should follow the order specified in the parameter_space declaration
+                """
 
-#                ### Get new points from BO
+                # Set to None to use all available CPU
+                max_pool = 5
+                with Pool(max_pool) as p:
+                    Y = list(
+                        tqdm(
+                            p.imap(invoke_miniscot, X),
+                            total=X.shape[0]
+                        )
+                    )
 
-        new_X, new_Y = bayesopt_loop.loop_state.X, bayesopt_loop.loop_state.Y
+                # Note that we negate the reward; want to find min
+                Y = -np.reshape(np.array(Y), (-1, 1))
+                return Y
 
-        new_order = np.argsort(new_X[:, 0])
-        new_X = new_X[new_order, :]
-        new_Y = new_Y[new_order]
+            # ### Get initial data points
 
-        # ### Plot results from BO with the GP fit
+            design = RandomDesign(parameter_space)
 
-        x_plot = np.reshape(
-            np.array([i for i in range(0, max_num_batteries)]), (-1, 1))
-        mu_plot, var_plot = model_emukit.predict(x_plot)
+            start = time.time()
+            Y = f_multiprocess(X)
+            end = time.time()
+            print("Getting {} initial simulation points took {} seconds".format(
+                num_data_points, round(end - start, 0)))
 
-        plt.figure(figsize=(12, 8))
-        #plt.figure(figsize=(7, 5))
-        LEGEND_SIZE = 15
-        plt.plot(new_X, new_Y, "ro", markersize=10, label="All observations")
-        plt.plot(X, Y, "bo", markersize=10, label="Initial observations")
-        # plt.plot(x_plot, y_plot, "k", label="Objective Function")
-        plt.plot(x_plot, mu_plot, "C0", label="Model")
-        plt.fill_between(x_plot[:, 0],
-                         mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                         mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
-        plt.fill_between(x_plot[:, 0],
-                         mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                         mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
-        plt.fill_between(x_plot[:, 0],
-                         mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                         mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
+            # ### Check the cum. reward from the initial points to ensure we are seeing reasonable behaviour before fitting
 
-        plt.legend(prop={'size': 14})
-        plt.xlabel("Number of Batteries", fontsize=14)
-        plt.ylabel("Cumulative Reward (£)", fontsize=14)
-        plt.grid(True)
-        plt.yticks(fontsize=13)
-        plt.xticks(fontsize=13)
-        # plt.show()
-        plt.savefig(f"{main_save_dir}/surge.png")
+            # In[14]:
 
-        results = bayesopt_loop.get_results()
-        # , results.best_found_value_per_iteration
-        print(f"Best: {results.minimum_location}, Val: {results.minimum_value}")
+            plot_reward(X, Y, parameter_space.parameter_names)
+
+            successful_sample = False
+            num_tries = 0
+            max_num_tries = 3
+
+            use_default = False
+            use_ard = False
+
+            while not successful_sample and num_tries < max_num_tries:
+
+                print(f"CURRENT ATTEMPT #{num_tries}")
+
+                # emulator model
+
+                if use_default:
+                    gpy_model = GPRegression(X, Y)
+                else:
+                    kernel = GPy.kern.RBF(1, lengthscale=1e1,
+                                          variance=1e4, ARD=use_ard)
+                    gpy_model = GPy.models.GPRegression(
+                        X, Y, kernel, noise_var=1e-10)
+
+                try:
+                    gpy_model.optimize()
+                    print("okay to optimize")
+                    model_emukit = GPyModelWrapper(gpy_model)
+
+                    # Load core elements for Bayesian optimization
+                    expected_improvement = ExpectedImprovement(
+                        model=model_emukit)
+                    optimizer = GradientAcquisitionOptimizer(
+                        space=parameter_space)
+
+                    # Create the Bayesian optimization object
+                    batch_size = 3
+                    bayesopt_loop = BayesianOptimizationLoop(model=model_emukit,
+                                                             space=parameter_space,
+                                                             acquisition=expected_improvement,
+                                                             batch_size=batch_size)
+
+                    # Run the loop and extract the optimum;  we either complete 10 steps or converge
+                    max_iters = 10
+                    stopping_condition = (
+                        FixedIterationsStoppingCondition(
+                            i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
+                    )
+
+                    bayesopt_loop.run_loop(f_multiprocess, stopping_condition)
+                    print("successfully ran loop")
+                    successful_sample = True
+
+                except:
+                    num_tries += 1
+
+    #                ### Get new points from BO
+
+            new_X, new_Y = bayesopt_loop.loop_state.X, bayesopt_loop.loop_state.Y
+
+            new_order = np.argsort(new_X[:, 0])
+            new_X = new_X[new_order, :]
+            new_Y = new_Y[new_order]
+
+            # ### Plot results from BO with the GP fit
+
+            x_plot = np.reshape(
+                np.array([i for i in range(0, max_num_batteries)]), (-1, 1))
+            mu_plot, var_plot = model_emukit.predict(x_plot)
+
+            plt.figure(figsize=(12, 8))
+            #plt.figure(figsize=(7, 5))
+            LEGEND_SIZE = 15
+            plt.plot(new_X, new_Y, "ro", markersize=10,
+                     label="All observations")
+            plt.plot(X, Y, "bo", markersize=10, label="Initial observations")
+            # plt.plot(x_plot, y_plot, "k", label="Objective Function")
+            plt.plot(x_plot, mu_plot, "C0", label="Model")
+            plt.fill_between(x_plot[:, 0],
+                             mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
+                             mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
+            plt.fill_between(x_plot[:, 0],
+                             mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
+                             mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
+            plt.fill_between(x_plot[:, 0],
+                             mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
+                             mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
+
+            plt.legend(prop={'size': 14})
+            plt.xlabel("Number of Batteries", fontsize=14)
+            plt.ylabel("Cumulative Reward (£)", fontsize=14)
+            plt.grid(True)
+            plt.yticks(fontsize=13)
+            plt.xticks(fontsize=13)
+            # plt.show()
+            plt.savefig(f"{main_save_dir}/surge.png")
+
+            results = bayesopt_loop.get_results()
+            # , results.best_found_value_per_iteration
+            print(
+                f"Best: {results.minimum_location}, Val: {results.minimum_value}")
