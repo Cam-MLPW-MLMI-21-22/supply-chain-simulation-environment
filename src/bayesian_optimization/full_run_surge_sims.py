@@ -56,12 +56,21 @@ all_scenarios = {"Baseline (20 % Discount)": {"discharge_discount": 0.8,
 
 
 network_param_scenarios = ["Baseline (20 % Discount)", "33 % Discount"]
-surge_scenarios = ["wind", "solar", "wind+solar"]
+surge_scenarios = ["solar", "wind", "wind+solar"]
 
+# univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
+univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 1.7, 2.0]
+
+bivariate_surge = itertools.product([1.2, 1.5, 2.5], [0.1, 0.3, 0.7])
+
+# surge vals stored as (wind_mod, solar_mod)
+
+surge_vals = {"wind": [(surge_val, 1.0) for surge_val in univariate_surge],
+              "solar": [(1.0, surge_val) for surge_val in univariate_surge],
+              "wind+solar": bivariate_surge}
 
 timesteps_per_day = 48
-num_days = 30
-time_horizon_value = timesteps_per_day*num_days
+
 
 max_num_batteries = 1000
 
@@ -72,7 +81,7 @@ max_battery_penalty = DEFAULT_RUN_PARAMETERS.battery_penalty + 200000
 min_battery_capacity = 1
 max_battery_capacity = 80
 
-num_data_points = 20
+num_data_points = 30
 
 # Basic plotting function
 
@@ -111,251 +120,245 @@ def plot_reward(X, Y, labels):
 
 # In[10]:
 
-main_save_dir = "./surge_results"
+for num_days in [10, 30]:
 
-# univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
-univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 2.0]
+    time_horizon_value = timesteps_per_day*num_days
 
-bivariate_surge = itertools.product([1.2, 1.5, 3.0], [0.1, 0.3, 0.7])
+    main_save_dir = f"./surge_results_{num_days}"
+    if not os.path.exists(main_save_dir):
+        os.makedirs(main_save_dir)
 
-# surge vals stored as (wind_mod, solar_mod)
-
-surge_vals = {"wind": [(surge_val, 1.0) for surge_val in univariate_surge],
-              "solar": [(1.0, surge_val) for surge_val in univariate_surge],
-              "wind+solar": bivariate_surge}
-
-# for scenario in surge_scenarios:
-#     for network_param_scenario in network_param_scenarios:
-for scenario in surge_scenarios:
     for network_param_scenario in network_param_scenarios:
-        save_dir = f"{main_save_dir}/{scenario}/{network_param_scenario}"
-        if not os.path.exists(save_dir):
-            os.makedirs(save_dir)
+        for scenario in surge_scenarios:
+            # for scenario in surge_scenarios:
+            #     for network_param_scenario in network_param_scenarios:
+            save_dir = f"{main_save_dir}/{scenario}/{network_param_scenario}"
+            if not os.path.exists(save_dir):
+                os.makedirs(save_dir)
 
-        out_file = open(f"{save_dir}/temp_out.txt", "w")
-        res_file = open(f"{save_dir}/results.txt", "w")
+            stored_opt_locs = []
+            stored_wind_mod = []
+            stored_wind_mod = []
+            stored_scenarios = []
+            stored_solar_mod = []
+            stored_param_scenarios = []
 
-        stored_opt_locs = []
-        stored_wind_mod = []
-        stored_wind_mod = []
-        stored_scenarios = []
-        stored_solar_mod = []
-        stored_param_scenarios = []
+            for (wind_mod, solar_mod) in surge_vals[scenario]:
 
-        for (wind_mod, solar_mod) in surge_vals[scenario]:
+                single_res_file = open(
+                    f"{save_dir}/results_{wind_mod}_{solar_mod}.txt", "w")
 
-            single_res_file = open(
-                f"{save_dir}/results_{wind_mod}_{solar_mod}.txt", "w")
+                print(
+                    f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}\n")
+                print(f"Wind: {wind_mod}, Solar: {solar_mod}\n")
 
-            out_file.write(
-                f"Network Param Scenario: {network_param_scenario}, Surge Scenario: {scenario}\n")
-            out_file.write(f"Wind: {wind_mod}, Solar: {solar_mod}\n")
+                num_batteries = DiscreteParameter(
+                    'num_batteries', range(0, max_num_batteries+1))
 
-            num_batteries = DiscreteParameter(
-                'num_batteries', range(0, max_num_batteries+1))
+                # parameters = [num_batteries, network_param_scenario,
+                #               scenario, wind_mod, solar_mod]
+                parameters = [num_batteries]
+                parameter_space = ParameterSpace(parameters)
+                # Get and check the parameters of the intial values (X)
 
-            # parameters = [num_batteries, network_param_scenario,
-            #               scenario, wind_mod, solar_mod]
-            parameters = [num_batteries]
-            parameter_space = ParameterSpace(parameters)
-            # Get and check the parameters of the intial values (X)
+                design = RandomDesign(parameter_space)
+                X = design.get_samples(num_data_points)
+                # overwrite
+                X = np.linspace(0, max_num_batteries,
+                                num_data_points).reshape([num_data_points, 1])
+                print(X)
 
-            design = RandomDesign(parameter_space)
-            X = design.get_samples(num_data_points)
-            print(X)
+                def invoke_miniscot(x):
+                    """
+                    Handling single API call to miniSCOT simulation given some inputs
 
-            def invoke_miniscot(x):
-                """
-                Handling single API call to miniSCOT simulation given some inputs
+                    x contains parameter configs x = [x0 x1 ...]
+                    - The order of parameters in x should follow the order specified in the parameter_space declaration
+                    - E.g. here we specify num_batteries = x[0]
+                    """
+                    kwargs = {
+                        'time_horizon': time_horizon_value,
+                        'num_batteries': int(x[0])
+                    }
 
-                x contains parameter configs x = [x0 x1 ...]
-                - The order of parameters in x should follow the order specified in the parameter_space declaration
-                - E.g. here we specify num_batteries = x[0]
-                """
-                kwargs = {
-                    'time_horizon': time_horizon_value,
-                    'num_batteries': int(x[0])
-                }
+                    kwargs.update(all_scenarios[network_param_scenario])
 
-                kwargs.update(all_scenarios[network_param_scenario])
+                    kwargs["surge_modulator"] = wind_mod
+                    kwargs["solar_surge_modulator"] = solar_mod
+                    kwargs["surge_scenario"] = scenario
 
-                kwargs["surge_modulator"] = wind_mod
-                kwargs["solar_surge_modulator"] = solar_mod
-                kwargs["surge_scenario"] = scenario
+                    cum_reward = run_simulation(**kwargs)
 
-                cum_reward = run_simulation(**kwargs)
+                    return cum_reward[-1]
 
-                return cum_reward[-1]
+                # In[7]:
 
-            # In[7]:
+                def f(X):
+                    """
+                    Handling multiple API calls to miniSCOT simulation given some inputs
 
-            def f(X):
-                """
-                Handling multiple API calls to miniSCOT simulation given some inputs
+                    X is a matrix of parameters
+                    - Each row is a set of parameters
+                    - The order of parameters in the row should follow the order specified in the parameter_space declaration
+                    """
+                    Y = []
+                    for x in X:
+                        cum_reward = invoke_miniscot(x)
 
-                X is a matrix of parameters
-                - Each row is a set of parameters
-                - The order of parameters in the row should follow the order specified in the parameter_space declaration
-                """
-                Y = []
-                for x in X:
-                    cum_reward = invoke_miniscot(x)
+                        # Note that we negate the reward; want to find min
+                        Y.append(-cum_reward[-1])
+
+                    Y = np.reshape(np.array(Y), (-1, 1))
+                    return Y
+
+                # In[8]:
+
+                def f_multiprocess(X):
+                    """
+                    Handling multiple API calls to miniSCOT simulation given some inputs using multiprocessing.
+
+                    X is a matrix of parameters
+                    - Each row is a set of parameters
+                    - The order of parameters in the row should follow the order specified in the parameter_space declaration
+                    """
+
+                    # Set to None to use all available CPU
+                    max_pool = 5
+                    with Pool(max_pool) as p:
+                        Y = list(
+                            tqdm(
+                                p.imap(invoke_miniscot, X),
+                                total=X.shape[0]
+                            )
+                        )
 
                     # Note that we negate the reward; want to find min
-                    Y.append(-cum_reward[-1])
+                    Y = -np.reshape(np.array(Y), (-1, 1))
+                    return Y
 
-                Y = np.reshape(np.array(Y), (-1, 1))
-                return Y
+                # ### Get initial data points
 
-            # In[8]:
+                design = RandomDesign(parameter_space)
 
-            def f_multiprocess(X):
-                """
-                Handling multiple API calls to miniSCOT simulation given some inputs using multiprocessing.
+                start = time.time()
+                Y = f_multiprocess(X)
+                end = time.time()
+                print("Getting {} initial simulation points took {} seconds".format(
+                    num_data_points, round(end - start, 0)))
 
-                X is a matrix of parameters
-                - Each row is a set of parameters
-                - The order of parameters in the row should follow the order specified in the parameter_space declaration
-                """
+                # ### Check the cum. reward from the initial points to ensure we are seeing reasonable behaviour before fitting
 
-                # Set to None to use all available CPU
-                max_pool = 5
-                with Pool(max_pool) as p:
-                    Y = list(
-                        tqdm(
-                            p.imap(invoke_miniscot, X),
-                            total=X.shape[0]
+                # In[14]:
+
+                plot_reward(X, Y, parameter_space.parameter_names)
+
+                successful_sample = False
+                num_tries = 0
+                max_num_tries = 3
+
+                use_default = False
+                use_ard = False
+
+                while not successful_sample and num_tries < max_num_tries:
+
+                    print(f"\nCURRENT ATTEMPT #{num_tries}")
+
+                    # emulator model
+
+                    if use_default:
+                        gpy_model = GPRegression(X, Y)
+                    else:
+                        kernel = GPy.kern.RBF(1, lengthscale=1e0,
+                                              variance=1e4, ARD=use_ard)
+                        gpy_model = GPy.models.GPRegression(
+                            X, Y, kernel, noise_var=1e-10)
+
+                    try:
+                        gpy_model.optimize()
+                        print("\nokay to optimize")
+                        model_emukit = GPyModelWrapper(gpy_model)
+
+                        # Load core elements for Bayesian optimization
+                        expected_improvement = ExpectedImprovement(
+                            model=model_emukit)
+                        optimizer = GradientAcquisitionOptimizer(
+                            space=parameter_space)
+
+                        # Create the Bayesian optimization object
+                        batch_size = 3
+                        bayesopt_loop = BayesianOptimizationLoop(model=model_emukit,
+                                                                 space=parameter_space,
+                                                                 acquisition=expected_improvement,
+                                                                 batch_size=batch_size)
+
+                        # Run the loop and extract the optimum;  we either complete 10 steps or converge
+                        max_iters = 5
+                        stopping_condition = (
+                            FixedIterationsStoppingCondition(
+                                i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
                         )
-                    )
 
-                # Note that we negate the reward; want to find min
-                Y = -np.reshape(np.array(Y), (-1, 1))
-                return Y
+                        bayesopt_loop.run_loop(
+                            f_multiprocess, stopping_condition)
+                        print("\nsuccessfully ran loop\n")
+                        successful_sample = True
 
-            # ### Get initial data points
+                    except:
+                        num_tries += 1
 
-            design = RandomDesign(parameter_space)
+        #                ### Get new points from BO
 
-            start = time.time()
-            Y = f_multiprocess(X)
-            end = time.time()
-            out_file.write("Getting {} initial simulation points took {} seconds".format(
-                num_data_points, round(end - start, 0)))
+                new_X, new_Y = bayesopt_loop.loop_state.X, bayesopt_loop.loop_state.Y
 
-            # ### Check the cum. reward from the initial points to ensure we are seeing reasonable behaviour before fitting
+                new_order = np.argsort(new_X[:, 0])
+                new_X = new_X[new_order, :]
+                new_Y = new_Y[new_order]
 
-            # In[14]:
+                # ### Plot results from BO with the GP fit
 
-            plot_reward(X, Y, parameter_space.parameter_names)
+                x_plot = np.reshape(
+                    np.array([i for i in range(0, max_num_batteries)]), (-1, 1))
+                mu_plot, var_plot = model_emukit.predict(x_plot)
 
-            successful_sample = False
-            num_tries = 0
-            max_num_tries = 3
+                plt.figure(figsize=(12, 8))
+                LEGEND_SIZE = 15
+                plt.plot(new_X, new_Y, "ro", markersize=10,
+                         label="All observations")
+                plt.plot(X, Y, "bo", markersize=10,
+                         label="Initial observations")
+                plt.plot(x_plot, mu_plot, "C0", label="Model")
+                plt.fill_between(x_plot[:, 0],
+                                 mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
+                                 mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
+                plt.fill_between(x_plot[:, 0],
+                                 mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
+                                 mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
+                plt.fill_between(x_plot[:, 0],
+                                 mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
+                                 mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
 
-            use_default = False
-            use_ard = False
+                plt.legend(prop={'size': 14})
+                plt.xlabel("Number of Batteries", fontsize=14)
+                plt.ylabel("Cumulative Reward (£)", fontsize=14)
+                plt.grid(True)
+                plt.yticks(fontsize=13)
+                plt.xticks(fontsize=13)
+                plt.savefig(
+                    f"{save_dir}/wind_{wind_mod}_solar_{solar_mod}.png")
 
-            while not successful_sample and num_tries < max_num_tries:
+                results = bayesopt_loop.get_results()
+                print(
+                    f"\nBest: {results.minimum_location}, Val: {results.minimum_value}\n")
+                opt_loc = results.minimum_location[0]
+                single_res_file.write(str(opt_loc))
+                single_res_file.close()
+                stored_opt_locs.append(opt_loc)
+                stored_scenarios.append(scenario)
+                stored_param_scenarios.append(network_param_scenario)
+                stored_wind_mod.append(wind_mod)
+                stored_solar_mod.append(solar_mod)
 
-                out_file.write(f"\nCURRENT ATTEMPT #{num_tries}")
-
-                # emulator model
-
-                if use_default:
-                    gpy_model = GPRegression(X, Y)
-                else:
-                    kernel = GPy.kern.RBF(1, lengthscale=1e1,
-                                          variance=1e4, ARD=use_ard)
-                    gpy_model = GPy.models.GPRegression(
-                        X, Y, kernel, noise_var=1e-10)
-
-                try:
-                    gpy_model.optimize()
-                    out_file.write("\nokay to optimize")
-                    model_emukit = GPyModelWrapper(gpy_model)
-
-                    # Load core elements for Bayesian optimization
-                    expected_improvement = ExpectedImprovement(
-                        model=model_emukit)
-                    optimizer = GradientAcquisitionOptimizer(
-                        space=parameter_space)
-
-                    # Create the Bayesian optimization object
-                    batch_size = 3
-                    bayesopt_loop = BayesianOptimizationLoop(model=model_emukit,
-                                                             space=parameter_space,
-                                                             acquisition=expected_improvement,
-                                                             batch_size=batch_size)
-
-                    # Run the loop and extract the optimum;  we either complete 10 steps or converge
-                    max_iters = 5
-                    stopping_condition = (
-                        FixedIterationsStoppingCondition(
-                            i_max=max_iters) | ConvergenceStoppingCondition(eps=0.01)
-                    )
-
-                    bayesopt_loop.run_loop(f_multiprocess, stopping_condition)
-                    out_file.write("\nsuccessfully ran loop\n")
-                    successful_sample = True
-
-                except:
-                    num_tries += 1
-
-    #                ### Get new points from BO
-
-            new_X, new_Y = bayesopt_loop.loop_state.X, bayesopt_loop.loop_state.Y
-
-            new_order = np.argsort(new_X[:, 0])
-            new_X = new_X[new_order, :]
-            new_Y = new_Y[new_order]
-
-            # ### Plot results from BO with the GP fit
-
-            x_plot = np.reshape(
-                np.array([i for i in range(0, max_num_batteries)]), (-1, 1))
-            mu_plot, var_plot = model_emukit.predict(x_plot)
-
-            plt.figure(figsize=(12, 8))
-            LEGEND_SIZE = 15
-            plt.plot(new_X, new_Y, "ro", markersize=10,
-                     label="All observations")
-            plt.plot(X, Y, "bo", markersize=10, label="Initial observations")
-            plt.plot(x_plot, mu_plot, "C0", label="Model")
-            plt.fill_between(x_plot[:, 0],
-                             mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
-                             mu_plot[:, 0] - np.sqrt(var_plot)[:, 0], color="C0", alpha=0.6)
-            plt.fill_between(x_plot[:, 0],
-                             mu_plot[:, 0] + 2 * np.sqrt(var_plot)[:, 0],
-                             mu_plot[:, 0] - 2 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.4)
-            plt.fill_between(x_plot[:, 0],
-                             mu_plot[:, 0] + 3 * np.sqrt(var_plot)[:, 0],
-                             mu_plot[:, 0] - 3 * np.sqrt(var_plot)[:, 0], color="C0", alpha=0.2)
-
-            plt.legend(prop={'size': 14})
-            plt.xlabel("Number of Batteries", fontsize=14)
-            plt.ylabel("Cumulative Reward (£)", fontsize=14)
-            plt.grid(True)
-            plt.yticks(fontsize=13)
-            plt.xticks(fontsize=13)
-            plt.savefig(f"{save_dir}/wind_{wind_mod}_solar_{solar_mod}.png")
-
-            results = bayesopt_loop.get_results()
-            out_file.write(
-                f"\nBest: {results.minimum_location}, Val: {results.minimum_value}\n")
-            opt_loc = results.minimum_location[0]
-            res_file.write(f"{opt_loc}\n")
-            single_res_file.write(str(opt_loc))
-            single_res_file.close()
-            stored_opt_locs.append(opt_loc)
-            stored_scenarios.append(scenario)
-            stored_param_scenarios.append(network_param_scenario)
-            stored_wind_mod.append(wind_mod)
-            stored_solar_mod.append(solar_mod)
-
-        out_file.close()
-        res_file.close()
-
-        res_df = pd.DataFrame({"Optimum": stored_opt_locs, "Solar Surge Factor": stored_solar_mod,
-                               "Wind Surge Factor": stored_wind_mod, "Network Parameter Scenario": stored_param_scenarios,
-                               "Surge Scenario": stored_scenarios})
-        res_df.to_csv(f"{save_dir}/results.csv")
+            res_df = pd.DataFrame({"Optimum": stored_opt_locs, "Solar Surge Factor": stored_solar_mod,
+                                   "Wind Surge Factor": stored_wind_mod, "Network Parameter Scenario": stored_param_scenarios,
+                                   "Surge Scenario": stored_scenarios})
+            res_df.to_csv(f"{save_dir}/results.csv")
