@@ -74,43 +74,8 @@ max_battery_capacity = 80
 
 num_data_points = 10
 
-
-# def invoke_miniscot(x):
-#     """
-#     Handling single API call to miniSCOT simulation given some inputs
-#
-#     x contains parameter configs x = [x0 x1 ...]
-#     - The order of parameters in x should follow the order specified in the parameter_space declaration
-#     - E.g. here we specify num_batteries = x[0]
-#     """
-#
-#     num_batteries, network_param_scenario, scenario, wind_mod, solar_mod = x
-#
-#     kwargs = {
-#         'time_horizon': time_horizon_value,
-#         'num_batteries': int(num_batteries)
-#     }
-#
-#     kwargs.update(all_scenarios[network_param_scenario])
-#
-#
-# #     kwargs["surge_modulator"] = 1.5
-# #     kwargs["solar_surge_modulator"] = 0.5
-# #     kwargs["surge_scenario"] = "wind+solar"
-#
-#     kwargs["surge_modulator"] = wind_mod
-#     kwargs["solar_surge_modulator"] = solar_mod
-#     kwargs["surge_scenario"] = scenario
-#
-#     cum_reward = run_simulation(**kwargs)
-#
-#     return cum_reward[-1]
-
-
-# In[9]:
-
-
 # Basic plotting function
+
 
 def plot_reward(X, Y, labels):
     """
@@ -210,10 +175,6 @@ for scenario in surge_scenarios:
                 }
 
                 kwargs.update(all_scenarios[network_param_scenario])
-
-            #     kwargs["surge_modulator"] = 1.5
-            #     kwargs["solar_surge_modulator"] = 0.5
-            #     kwargs["surge_scenario"] = "wind+solar"
 
                 kwargs["surge_modulator"] = wind_mod
                 kwargs["solar_surge_modulator"] = solar_mod
@@ -352,12 +313,10 @@ for scenario in surge_scenarios:
             mu_plot, var_plot = model_emukit.predict(x_plot)
 
             plt.figure(figsize=(12, 8))
-            #plt.figure(figsize=(7, 5))
             LEGEND_SIZE = 15
             plt.plot(new_X, new_Y, "ro", markersize=10,
                      label="All observations")
             plt.plot(X, Y, "bo", markersize=10, label="Initial observations")
-            # plt.plot(x_plot, y_plot, "k", label="Objective Function")
             plt.plot(x_plot, mu_plot, "C0", label="Model")
             plt.fill_between(x_plot[:, 0],
                              mu_plot[:, 0] + np.sqrt(var_plot)[:, 0],
@@ -375,11 +334,9 @@ for scenario in surge_scenarios:
             plt.grid(True)
             plt.yticks(fontsize=13)
             plt.xticks(fontsize=13)
-            # plt.show()
             plt.savefig(f"{save_dir}/wind_{wind_mod}_solar_{solar_mod}.png")
 
             results = bayesopt_loop.get_results()
-            # , results.best_found_value_per_iteration
             out_file.write(
                 f"\nBest: {results.minimum_location}, Val: {results.minimum_value}\n")
             opt_loc = results.minimum_location[0]
