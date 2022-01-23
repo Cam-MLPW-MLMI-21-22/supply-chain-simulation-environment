@@ -55,11 +55,12 @@ all_scenarios = {"Baseline (20 % Discount)": {"discharge_discount": 0.8,
                                    "charging_discount": 1.05}}
 
 
-network_param_scenarios = ["Baseline (20 % Discount)", "33 % Discount"]
-surge_scenarios = ["solar", "wind", "wind+solar"]
+# ["Baseline (20 % Discount)", "33 % Discount"]
+network_param_scenarios = ["33 % Discount"]
+surge_scenarios = ["solar"]  # ["wind+solar"]
 
 # univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
-univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 1.7, 2.0]
+univariate_surge = [1.0, 1.2, 1.7, 2.0]  # [0.1, 0.5, 0.7, 1.0, 1.2, 1.7, 2.0]
 
 bivariate_surge = list(itertools.product([1.2, 1.5, 2.5], [0.1, 0.3, 0.7]))
 
@@ -120,7 +121,7 @@ def plot_reward(X, Y, labels):
 
 # In[10]:
 
-for num_days in [10, 30]:
+for num_days in [30]:
 
     time_horizon_value = timesteps_per_day*num_days
 
@@ -182,6 +183,8 @@ for num_days in [10, 30]:
                     }
 
                     kwargs.update(all_scenarios[network_param_scenario])
+
+                    print("Running: ", scenario, wind_mod, solar_mod)
 
                     kwargs["surge_modulator"] = wind_mod
                     kwargs["solar_surge_modulator"] = solar_mod
