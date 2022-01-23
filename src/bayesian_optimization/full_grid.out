@@ -1831,4 +1831,193 @@ Wind: 1.0, Solar: 1.7
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [02:33<1:14:09, 153.45s/it]  7%|▋         | 2/30 [02:34<29:46, 63.82s/it]    10%|█         | 3/30 [02:36<15:57, 35.47s/it] 13%|█▎        | 4/30 [02:37<09:32, 22.03s/it] 17%|█▋        | 5/30 [02:38<06:02, 14.50s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [02:33<1:14:09, 153.45s/it]  7%|▋         | 2/30 [02:34<29:46, 63.82s/it]    10%|█         | 3/30 [02:36<15:57, 35.47s/it] 13%|█▎        | 4/30 [02:37<09:32, 22.03s/it] 17%|█▋        | 5/30 [02:38<06:02, 14.50s/it] 20%|██        | 6/30 [05:15<25:04, 62.69s/it] 23%|██▎       | 7/30 [05:17<16:30, 43.07s/it] 27%|██▋       | 8/30 [05:21<11:09, 30.42s/it] 30%|███       | 9/30 [05:23<07:37, 21.81s/it] 33%|███▎      | 10/30 [05:26<05:15, 15.77s/it] 37%|███▋      | 11/30 [08:07<19:07, 60.40s/it] 40%|████      | 12/30 [08:11<12:56, 43.16s/it] 43%|████▎     | 13/30 [08:16<08:57, 31.61s/it] 47%|████▋     | 14/30 [08:21<06:14, 23.42s/it] 50%|█████     | 15/30 [08:24<04:20, 17.38s/it] 53%|█████▎    | 16/30 [11:06<14:13, 60.95s/it] 57%|█████▋    | 17/30 [11:11<09:34, 44.17s/it] 60%|██████    | 18/30 [11:18<06:36, 33.00s/it] 63%|██████▎   | 19/30 [11:24<04:33, 24.83s/it] 67%|██████▋   | 20/30 [11:28<03:07, 18.72s/it] 70%|███████   | 21/30 [14:12<09:18, 62.08s/it] 73%|███████▎  | 22/30 [14:18<06:03, 45.43s/it] 77%|███████▋  | 23/30 [14:27<04:00, 34.36s/it] 80%|████████  | 24/30 [14:34<02:37, 26.18s/it] 83%|████████▎ | 25/30 [14:39<01:39, 19.90s/it] 87%|████████▋ | 26/30 [17:23<04:12, 63.16s/it] 90%|█████████ | 27/30 [17:31<02:19, 46.52s/it] 93%|█████████▎| 28/30 [17:41<01:11, 35.53s/it] 97%|█████████▋| 29/30 [17:49<00:27, 27.18s/it]100%|██████████| 30/30 [17:53<00:00, 20.31s/it]100%|██████████| 30/30 [17:53<00:00, 35.78s/it]Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:emukit.bayesian_optimization.loops.bayesian_optimization_loop:Batch size is 3, using LocalPenalizationPointCalculator
+INFO:emukit.core.loop.outer_loop:Starting outer loop
+INFO:emukit.core.loop.outer_loop:Iteration 0
+INFO:emukit.core.loop.model_updaters:Updating parameters of the model
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[630]
+ [630]
+ [630]]
+INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
+Getting 30 initial simulation points took 1073.0 seconds
+
+CURRENT ATTEMPT #0
+
+okay to optimize
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [02:50<05:41, 170.78s/it] 67%|██████▋   | 2/3 [02:51<01:10, 70.54s/it] 100%|██████████| 3/3 [02:51<00:00, 57.05s/it]Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [630], Y: [-2041154.48330141], extra_outputs: {}), UserFunctionResult(X: [630], Y: [-2041154.48330141], extra_outputs: {}), UserFunctionResult(X: [630], Y: [-2041154.48330141], extra_outputs: {})]
+INFO:emukit.core.loop.outer_loop:Iteration 1
+INFO:emukit.core.loop.model_updaters:Updating parameters of the model
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[565]
+ [565]
+ [565]]
+INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [02:46<05:33, 166.51s/it]100%|██████████| 3/3 [02:46<00:00, 55.50s/it] Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+Running:  solar 1.0 1.7
+
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [565], Y: [-2033820.95267497], extra_outputs: {}), UserFunctionResult(X: [565], Y: [-2033820.95267497], extra_outputs: {}), UserFunctionResult(X: [565], Y: [-2033820.95267497], extra_outputs: {})]
+INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
+INFO:emukit.core.loop.model_updaters:Updating parameters of the model
+INFO:emukit.core.loop.outer_loop:Finished outer loop
+
+successfully ran loop
+
+
+Best: [630.], Val: -2041154.483301405
+
+Network Param Scenario: 33 % Discount, Surge Scenario: solar
+
+Wind: 1.0, Solar: 2.0
+
+[[   0.        ]
+ [  34.48275862]
+ [  68.96551724]
+ [ 103.44827586]
+ [ 137.93103448]
+ [ 172.4137931 ]
+ [ 206.89655172]
+ [ 241.37931034]
+ [ 275.86206897]
+ [ 310.34482759]
+ [ 344.82758621]
+ [ 379.31034483]
+ [ 413.79310345]
+ [ 448.27586207]
+ [ 482.75862069]
+ [ 517.24137931]
+ [ 551.72413793]
+ [ 586.20689655]
+ [ 620.68965517]
+ [ 655.17241379]
+ [ 689.65517241]
+ [ 724.13793103]
+ [ 758.62068966]
+ [ 793.10344828]
+ [ 827.5862069 ]
+ [ 862.06896552]
+ [ 896.55172414]
+ [ 931.03448276]
+ [ 965.51724138]
+ [1000.        ]]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [02:37<1:16:11, 157.64s/it]  7%|▋         | 2/30 [02:39<30:49, 66.04s/it]    10%|█         | 3/30 [02:40<16:22, 36.38s/it] 13%|█▎        | 4/30 [02:42<09:48, 22.65s/it] 17%|█▋        | 5/30 [02:43<06:13, 14.95s/it] 20%|██        | 6/30 [05:21<25:29, 63.72s/it] 23%|██▎       | 7/30 [05:25<16:55, 44.16s/it] 27%|██▋       | 8/30 [05:28<11:17, 30.80s/it] 30%|███       | 9/30 [05:31<07:45, 22.16s/it] 33%|███▎      | 10/30 [05:34<05:24, 16.23s/it] 37%|███▋      | 11/30 [08:15<19:12, 60.64s/it] 40%|████      | 12/30 [08:20<13:08, 43.83s/it] 43%|████▎     | 13/30 [08:24<08:56, 31.54s/it] 47%|████▋     | 14/30 [08:29<06:17, 23.57s/it] 50%|█████     | 15/30 [08:33<04:28, 17.88s/it] 53%|█████▎    | 16/30 [11:15<14:14, 61.04s/it] 57%|█████▋    | 17/30 [11:22<09:43, 44.89s/it] 60%|██████    | 18/30 [11:26<06:32, 32.68s/it] 63%|██████▎   | 19/30 [11:33<04:32, 24.74s/it] 67%|██████▋   | 20/30 [11:38<03:09, 18.98s/it] 70%|███████   | 21/30 [14:17<09:09, 61.08s/it] 73%|███████▎  | 22/30 [14:26<06:02, 45.34s/it] 77%|███████▋  | 23/30 [14:32<03:54, 33.44s/it] 80%|████████  | 24/30 [14:40<02:34, 25.83s/it] 83%|████████▎ | 25/30 [14:46<01:40, 20.01s/it] 87%|████████▋ | 26/30 [17:30<04:12, 63.13s/it] 90%|█████████ | 27/30 [17:41<02:22, 47.41s/it] 93%|█████████▎| 28/30 [17:47<01:10, 35.20s/it] 97%|█████████▋| 29/30 [17:56<00:27, 27.27s/it]100%|██████████| 30/30 [18:01<00:00, 20.59s/it]100%|██████████| 30/30 [18:01<00:00, 36.05s/it]Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:emukit.bayesian_optimization.loops.bayesian_optimization_loop:Batch size is 3, using LocalPenalizationPointCalculator
+INFO:emukit.core.loop.outer_loop:Starting outer loop
+INFO:emukit.core.loop.outer_loop:Iteration 0
+INFO:emukit.core.loop.model_updaters:Updating parameters of the model
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[625]
+ [625]
+ [625]]
+INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
+Getting 30 initial simulation points took 1082.0 seconds
+
+CURRENT ATTEMPT #0
+
+okay to optimize
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [02:49<05:38, 169.08s/it]100%|██████████| 3/3 [02:49<00:00, 43.89s/it] 100%|██████████| 3/3 [02:49<00:00, 56.41s/it]Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [625], Y: [-3853259.94356093], extra_outputs: {}), UserFunctionResult(X: [625], Y: [-3853259.94356093], extra_outputs: {}), UserFunctionResult(X: [625], Y: [-3853259.94356093], extra_outputs: {})]
+INFO:emukit.core.loop.outer_loop:Iteration 1
+INFO:emukit.core.loop.model_updaters:Updating parameters of the model
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[614]
+ [614]
+ [614]]
+INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [02:49<05:38, 169.25s/it]100%|██████████| 3/3 [02:49<00:00, 56.42s/it] Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+Running:  solar 1.0 2.0
+
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [614], Y: [-3853242.50533174], extra_outputs: {}), UserFunctionResult(X: [614], Y: [-3853242.50533174], extra_outputs: {}), UserFunctionResult(X: [614], Y: [-3853242.50533174], extra_outputs: {})]
+INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
+INFO:emukit.core.loop.model_updaters:Updating parameters of the model
+INFO:emukit.core.loop.outer_loop:Finished outer loop
+
+successfully ran loop
+
+
+Best: [620.68965517], Val: -3853288.7698204434
+
