@@ -61,7 +61,7 @@ Wind: 1.0, Solar: 0.1
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:50<24:26, 50.57s/it]  7%|▋         | 2/30 [00:51<09:50, 21.10s/it] 10%|█         | 3/30 [00:51<05:16, 11.71s/it] 13%|█▎        | 4/30 [00:52<03:09,  7.28s/it] 17%|█▋        | 5/30 [00:52<02:00,  4.83s/it] 20%|██        | 6/30 [01:44<08:19, 20.83s/it] 23%|██▎       | 7/30 [01:45<05:28, 14.29s/it] 27%|██▋       | 8/30 [01:46<03:42, 10.10s/it] 30%|███       | 9/30 [01:47<02:32,  7.25s/it] 33%|███▎      | 10/30 [01:48<01:47,  5.36s/it] 37%|███▋      | 11/30 [02:40<06:12, 19.63s/it] 40%|████      | 12/30 [02:41<04:13, 14.09s/it] 43%|████▎     | 13/30 [02:43<02:54, 10.28s/it] 47%|████▋     | 14/30 [02:44<02:02,  7.63s/it] 50%|█████     | 15/30 [02:46<01:26,  5.76s/it] 53%|█████▎    | 16/30 [03:40<04:45, 20.41s/it] 57%|█████▋    | 17/30 [03:42<03:12, 14.80s/it] 60%|██████    | 18/30 [03:44<02:12, 11.00s/it] 63%|██████▎   | 19/30 [03:46<01:30,  8.25s/it] 67%|██████▋   | 20/30 [03:48<01:03,  6.40s/it] 70%|███████   | 21/30 [04:41<03:02, 20.27s/it] 73%|███████▎  | 22/30 [04:43<01:59, 14.91s/it] 77%|███████▋  | 23/30 [04:46<01:18, 11.24s/it] 80%|████████  | 24/30 [04:48<00:51,  8.56s/it] 83%|████████▎ | 25/30 [04:51<00:33,  6.72s/it] 87%|████████▋ | 26/30 [05:43<01:22, 20.58s/it] 90%|█████████ | 27/30 [05:46<00:45, 15.29s/it] 93%|█████████▎| 28/30 [05:50<00:23, 11.66s/it] 97%|█████████▋| 29/30 [05:52<00:08,  8.80s/it]100%|██████████| 30/30 [05:54<00:00,  6.71s/it]100%|██████████| 30/30 [05:54<00:00, 11.80s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:50<24:22, 50.43s/it]  7%|▋         | 2/30 [00:50<09:46, 20.96s/it] 10%|█         | 3/30 [00:51<05:13, 11.59s/it] 13%|█▎        | 4/30 [00:51<03:07,  7.23s/it] 17%|█▋        | 5/30 [00:52<01:58,  4.74s/it] 20%|██        | 6/30 [01:42<08:10, 20.44s/it] 23%|██▎       | 7/30 [01:43<05:20, 13.96s/it] 27%|██▋       | 8/30 [01:44<03:35,  9.78s/it] 30%|███       | 9/30 [01:45<02:27,  7.03s/it] 33%|███▎      | 10/30 [01:46<01:42,  5.13s/it] 37%|███▋      | 11/30 [02:37<06:05, 19.26s/it] 40%|████      | 12/30 [02:38<04:07, 13.74s/it] 43%|████▎     | 13/30 [02:40<02:50, 10.03s/it] 47%|████▋     | 14/30 [02:41<01:58,  7.43s/it] 50%|█████     | 15/30 [02:43<01:24,  5.63s/it] 53%|█████▎    | 16/30 [03:36<04:40, 20.07s/it] 57%|█████▋    | 17/30 [03:37<03:07, 14.40s/it] 60%|██████    | 18/30 [03:39<02:07, 10.61s/it] 63%|██████▎   | 19/30 [03:41<01:28,  8.03s/it] 67%|██████▋   | 20/30 [03:43<01:01,  6.17s/it] 70%|███████   | 21/30 [04:36<03:00, 20.08s/it] 73%|███████▎  | 22/30 [04:37<01:56, 14.50s/it] 77%|███████▋  | 23/30 [04:40<01:17, 11.03s/it] 80%|████████  | 24/30 [04:43<00:51,  8.52s/it] 83%|████████▎ | 25/30 [04:45<00:33,  6.63s/it] 87%|████████▋ | 26/30 [05:38<01:22, 20.52s/it] 90%|█████████ | 27/30 [05:40<00:44, 14.89s/it] 93%|█████████▎| 28/30 [05:42<00:22, 11.19s/it] 97%|█████████▋| 29/30 [05:45<00:08,  8.66s/it]100%|██████████| 30/30 [05:46<00:00,  6.48s/it]100%|██████████| 30/30 [05:46<00:00, 11.56s/it]
 DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0.
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/Users/kcollins/opt/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/cmtt10.ttf', name='cmtt10', style='normal', variant='normal', weight=400, stretch='normal', size='scalable')) = 10.05
 DEBUG:matplotlib.font_manager:findfont: score(FontEntry(fname='/Users/kcollins/opt/anaconda3/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STIXSizTwoSymBol.ttf', name='STIXSizeTwoSym', style='normal', variant='normal', weight=700, stretch='normal', size='scalable')) = 10.335
@@ -460,28 +460,28 @@ INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[   0]
- [1000]
- [1000]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[265]
+ [265]
+ [265]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 354.0 seconds
+Getting 30 initial simulation points took 347.0 seconds
 
 CURRENT ATTEMPT #0
 
 okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:47<01:34, 47.18s/it] 67%|██████▋   | 2/3 [00:59<00:26, 26.47s/it]100%|██████████| 3/3 [00:59<00:00, 19.74s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [0], Y: [1242152.48], extra_outputs: {}), UserFunctionResult(X: [1000], Y: [1185128.0202907], extra_outputs: {}), UserFunctionResult(X: [1000], Y: [1185128.0202907], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:49<01:39, 49.93s/it]100%|██████████| 3/3 [00:49<00:00, 16.66s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [265], Y: [7971634.79938205], extra_outputs: {}), UserFunctionResult(X: [265], Y: [7971634.79938205], extra_outputs: {}), UserFunctionResult(X: [265], Y: [7971634.79938205], extra_outputs: {})]
 INFO:emukit.core.loop.outer_loop:Iteration 1
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[432]
- [432]
- [432]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[0]
+ [0]
+ [0]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:54<01:49, 54.86s/it]100%|██████████| 3/3 [00:54<00:00, 18.29s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:46<01:33, 46.71s/it] 67%|██████▋   | 2/3 [00:46<00:19, 19.31s/it]100%|██████████| 3/3 [00:46<00:00, 15.62s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [0], Y: [8031665.65], extra_outputs: {}), UserFunctionResult(X: [0], Y: [8031665.65], extra_outputs: {}), UserFunctionResult(X: [0], Y: [8031665.65], extra_outputs: {})]
 INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.loop.outer_loop:Finished outer loop
@@ -1653,7 +1653,7 @@ DEBUG:matplotlib.font_manager:findfont: Matching sans\-serif:style=normal:varian
 successfully ran loop
 
 
-Best: [432.], Val: 1055995.3436095843
+Best: [275.86206897], Val: 7971541.770754959
 
 Network Param Scenario: Baseline (20 % Discount), Surge Scenario: solar
 
@@ -1689,7 +1689,7 @@ Wind: 1.0, Solar: 0.5
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:51<25:01, 51.78s/it]  7%|▋         | 2/30 [00:52<10:04, 21.58s/it] 10%|█         | 3/30 [00:52<05:23, 11.97s/it] 13%|█▎        | 4/30 [00:53<03:15,  7.53s/it] 17%|█▋        | 5/30 [00:53<02:02,  4.91s/it] 20%|██        | 6/30 [01:51<09:08, 22.86s/it] 23%|██▎       | 7/30 [01:52<06:01, 15.71s/it] 27%|██▋       | 8/30 [01:53<04:03, 11.07s/it] 30%|███       | 9/30 [01:54<02:47,  7.97s/it] 33%|███▎      | 10/30 [01:55<01:54,  5.70s/it] 37%|███▋      | 11/30 [02:54<06:56, 21.92s/it] 40%|████      | 12/30 [02:55<04:43, 15.74s/it] 43%|████▎     | 13/30 [02:57<03:14, 11.45s/it] 47%|████▋     | 14/30 [02:59<02:16,  8.55s/it] 50%|█████     | 15/30 [02:59<01:33,  6.23s/it] 53%|█████▎    | 16/30 [03:58<05:09, 22.09s/it] 57%|█████▋    | 17/30 [04:01<03:29, 16.13s/it] 60%|██████    | 18/30 [04:03<02:22, 11.89s/it] 63%|██████▎   | 19/30 [04:05<01:39,  9.04s/it] 67%|██████▋   | 20/30 [04:06<01:06,  6.62s/it] 70%|███████   | 21/30 [05:07<03:26, 22.93s/it] 73%|███████▎  | 22/30 [05:10<02:14, 16.82s/it] 77%|███████▋  | 23/30 [05:12<01:27, 12.52s/it] 80%|████████  | 24/30 [05:15<00:58,  9.78s/it] 83%|████████▎ | 25/30 [05:17<00:36,  7.26s/it] 87%|████████▋ | 26/30 [06:16<01:31, 22.92s/it] 90%|█████████ | 27/30 [06:19<00:50, 16.88s/it] 93%|█████████▎| 28/30 [06:22<00:25, 12.68s/it] 97%|█████████▋| 29/30 [06:26<00:09,  9.97s/it]100%|██████████| 30/30 [06:27<00:00,  7.40s/it]100%|██████████| 30/30 [06:27<00:00, 12.92s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:50<24:33, 50.80s/it]  7%|▋         | 2/30 [00:51<09:54, 21.22s/it] 10%|█         | 3/30 [00:51<05:16, 11.73s/it] 13%|█▎        | 4/30 [00:52<03:08,  7.25s/it] 17%|█▋        | 5/30 [00:52<02:00,  4.81s/it] 20%|██        | 6/30 [01:44<08:17, 20.72s/it] 23%|██▎       | 7/30 [01:45<05:27, 14.26s/it] 27%|██▋       | 8/30 [01:45<03:39,  9.98s/it] 30%|███       | 9/30 [01:46<02:29,  7.12s/it] 33%|███▎      | 10/30 [01:48<01:45,  5.29s/it] 37%|███▋      | 11/30 [02:39<06:11, 19.56s/it] 40%|████      | 12/30 [02:41<04:13, 14.08s/it] 43%|████▎     | 13/30 [02:42<02:51, 10.09s/it] 47%|████▋     | 14/30 [02:43<01:58,  7.41s/it] 50%|█████     | 15/30 [02:45<01:25,  5.68s/it] 53%|█████▎    | 16/30 [03:37<04:34, 19.61s/it] 57%|█████▋    | 17/30 [03:39<03:05, 14.30s/it] 60%|██████    | 18/30 [03:40<02:04, 10.37s/it] 63%|██████▎   | 19/30 [03:42<01:25,  7.77s/it] 67%|██████▋   | 20/30 [03:44<01:01,  6.12s/it] 70%|███████   | 21/30 [04:36<03:00, 20.04s/it] 73%|███████▎  | 22/30 [04:39<01:58, 14.75s/it] 77%|███████▋  | 23/30 [04:40<01:15, 10.77s/it] 80%|████████  | 24/30 [04:42<00:49,  8.18s/it] 83%|████████▎ | 25/30 [04:45<00:32,  6.54s/it] 87%|████████▋ | 26/30 [05:38<01:21, 20.37s/it] 90%|█████████ | 27/30 [05:41<00:45, 15.12s/it] 93%|█████████▎| 28/30 [05:42<00:22, 11.04s/it] 97%|█████████▋| 29/30 [05:45<00:08,  8.44s/it]100%|██████████| 30/30 [05:46<00:00,  6.50s/it]100%|██████████| 30/30 [05:46<00:00, 11.57s/it]
 INFO:GP:initializing Y
 INFO:GP:initializing inference method
 INFO:GP:adding kernel and likelihood as parameters
@@ -1701,38 +1701,27 @@ INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-b
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[1000]
- [ 847]
- [ 675]]
+ [1000]
+ [   0]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 388.0 seconds
+Getting 30 initial simulation points took 347.0 seconds
 
 CURRENT ATTEMPT #0
 
 okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [01:03<02:06, 63.42s/it]100%|██████████| 3/3 [01:03<00:00, 21.14s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [1000], Y: [1185128.0202907], extra_outputs: {}), UserFunctionResult(X: [847], Y: [1122828.47808522], extra_outputs: {}), UserFunctionResult(X: [675], Y: [1074056.93517122], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:57<01:55, 57.70s/it] 67%|██████▋   | 2/3 [00:57<00:23, 23.85s/it]100%|██████████| 3/3 [00:57<00:00, 19.28s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [1000], Y: [5039498.64329072], extra_outputs: {}), UserFunctionResult(X: [1000], Y: [5039498.64329072], extra_outputs: {}), UserFunctionResult(X: [0], Y: [4927328.35], extra_outputs: {})]
 INFO:emukit.core.loop.outer_loop:Iteration 1
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[600]
- [560]
- [185]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[304]
+ [304]
+ [304]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:55<01:51, 55.96s/it]100%|██████████| 3/3 [00:55<00:00, 18.65s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [600], Y: [1064039.50487442], extra_outputs: {}), UserFunctionResult(X: [560], Y: [1061040.2688828], extra_outputs: {}), UserFunctionResult(X: [185], Y: [1113278.39639878], extra_outputs: {})]
-INFO:emukit.core.loop.outer_loop:Iteration 2
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[432]
- [432]
- [432]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:54<01:48, 54.02s/it]100%|██████████| 3/3 [00:54<00:00, 18.01s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:50<01:41, 50.73s/it] 67%|██████▋   | 2/3 [00:50<00:20, 20.95s/it]100%|██████████| 3/3 [00:50<00:00, 16.94s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [304], Y: [4830027.54683636], extra_outputs: {}), UserFunctionResult(X: [304], Y: [4830027.54683636], extra_outputs: {}), UserFunctionResult(X: [304], Y: [4830027.54683636], extra_outputs: {})]
 INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.loop.outer_loop:Finished outer loop
@@ -1740,7 +1729,7 @@ INFO:emukit.core.loop.outer_loop:Finished outer loop
 successfully ran loop
 
 
-Best: [432.], Val: 1055995.3436095843
+Best: [310.34482759], Val: 4829985.6680601295
 
 Network Param Scenario: Baseline (20 % Discount), Surge Scenario: solar
 
@@ -1776,7 +1765,7 @@ Wind: 1.0, Solar: 0.7
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:51<25:05, 51.91s/it]  7%|▋         | 2/30 [00:52<10:07, 21.68s/it] 10%|█         | 3/30 [00:52<05:23, 11.97s/it] 13%|█▎        | 4/30 [00:53<03:14,  7.46s/it] 17%|█▋        | 5/30 [00:53<02:03,  4.93s/it] 20%|██        | 6/30 [01:45<08:23, 20.98s/it] 23%|██▎       | 7/30 [01:47<05:34, 14.56s/it] 27%|██▋       | 8/30 [01:48<03:47, 10.34s/it] 30%|███       | 9/30 [01:49<02:36,  7.46s/it] 33%|███▎      | 10/30 [01:50<01:48,  5.45s/it] 37%|███▋      | 11/30 [02:43<06:19, 19.96s/it] 40%|████      | 12/30 [02:45<04:19, 14.42s/it] 43%|████▎     | 13/30 [02:46<02:57, 10.47s/it] 47%|████▋     | 14/30 [02:48<02:03,  7.74s/it] 50%|█████     | 15/30 [02:49<01:27,  5.80s/it] 53%|█████▎    | 16/30 [03:42<04:40, 20.00s/it] 57%|█████▋    | 17/30 [03:44<03:10, 14.66s/it] 60%|██████    | 18/30 [03:46<02:10, 10.86s/it] 63%|██████▎   | 19/30 [03:48<01:29,  8.17s/it] 67%|██████▋   | 20/30 [03:50<01:02,  6.26s/it] 70%|███████   | 21/30 [04:43<03:03, 20.43s/it] 73%|███████▎  | 22/30 [04:46<02:01, 15.14s/it] 77%|███████▋  | 23/30 [04:49<01:19, 11.36s/it] 80%|████████  | 24/30 [04:51<00:51,  8.59s/it] 83%|████████▎ | 25/30 [04:53<00:33,  6.68s/it] 87%|████████▋ | 26/30 [05:47<01:23, 20.78s/it] 90%|█████████ | 27/30 [05:50<00:46, 15.57s/it] 93%|█████████▎| 28/30 [05:53<00:23, 11.72s/it] 97%|█████████▋| 29/30 [05:55<00:08,  8.81s/it]100%|██████████| 30/30 [05:57<00:00,  6.71s/it]100%|██████████| 30/30 [05:57<00:00, 11.91s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:50<24:28, 50.63s/it]  7%|▋         | 2/30 [00:51<09:51, 21.14s/it] 10%|█         | 3/30 [00:51<05:15, 11.67s/it] 13%|█▎        | 4/30 [00:52<03:08,  7.25s/it] 17%|█▋        | 5/30 [00:52<01:59,  4.78s/it] 20%|██        | 6/30 [01:43<08:11, 20.50s/it] 23%|██▎       | 7/30 [01:44<05:23, 14.07s/it] 27%|██▋       | 8/30 [01:45<03:37,  9.90s/it] 30%|███       | 9/30 [01:46<02:30,  7.14s/it] 33%|███▎      | 10/30 [01:47<01:43,  5.16s/it] 37%|███▋      | 11/30 [02:38<06:09, 19.44s/it] 40%|████      | 12/30 [02:40<04:10, 13.90s/it] 43%|████▎     | 13/30 [02:41<02:52, 10.13s/it] 47%|████▋     | 14/30 [02:43<02:01,  7.58s/it] 50%|█████     | 15/30 [02:44<01:24,  5.62s/it] 53%|█████▎    | 16/30 [03:37<04:38, 19.86s/it] 57%|█████▋    | 17/30 [03:38<03:06, 14.38s/it] 60%|██████    | 18/30 [03:40<02:06, 10.58s/it] 63%|██████▎   | 19/30 [03:42<01:28,  8.06s/it] 67%|██████▋   | 20/30 [03:44<01:00,  6.05s/it] 70%|███████   | 21/30 [04:36<02:59, 19.95s/it] 73%|███████▎  | 22/30 [04:38<01:57, 14.64s/it] 77%|███████▋  | 23/30 [04:40<01:16, 10.89s/it] 80%|████████  | 24/30 [04:43<00:50,  8.39s/it] 83%|████████▎ | 25/30 [04:45<00:31,  6.37s/it] 87%|████████▋ | 26/30 [05:37<01:20, 20.24s/it] 90%|█████████ | 27/30 [05:40<00:44, 14.89s/it] 93%|█████████▎| 28/30 [05:42<00:22, 11.18s/it] 97%|█████████▋| 29/30 [05:45<00:08,  8.60s/it]100%|██████████| 30/30 [05:46<00:00,  6.39s/it]100%|██████████| 30/30 [05:46<00:00, 11.55s/it]
 INFO:GP:initializing Y
 INFO:GP:initializing inference method
 INFO:GP:adding kernel and likelihood as parameters
@@ -1787,28 +1776,28 @@ INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[253]
- [322]
- [869]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[351]
+ [351]
+ [351]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 357.0 seconds
+Getting 30 initial simulation points took 347.0 seconds
 
 CURRENT ATTEMPT #0
 
 okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:50<01:41, 50.83s/it] 67%|██████▋   | 2/3 [00:51<00:21, 21.49s/it]100%|██████████| 3/3 [00:56<00:00, 13.78s/it]100%|██████████| 3/3 [00:56<00:00, 18.80s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [253], Y: [1085307.37243455], extra_outputs: {}), UserFunctionResult(X: [322], Y: [1065651.75500761], extra_outputs: {}), UserFunctionResult(X: [869], Y: [1130404.92690562], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:50<01:41, 50.60s/it] 67%|██████▋   | 2/3 [00:50<00:20, 20.93s/it]100%|██████████| 3/3 [00:50<00:00, 16.92s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [351], Y: [3280283.96708904], extra_outputs: {}), UserFunctionResult(X: [351], Y: [3280283.96708904], extra_outputs: {}), UserFunctionResult(X: [351], Y: [3280283.96708904], extra_outputs: {})]
 INFO:emukit.core.loop.outer_loop:Iteration 1
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[441]
- [441]
- [441]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[0]
+ [0]
+ [0]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:53<01:46, 53.26s/it]100%|██████████| 3/3 [00:53<00:00, 13.86s/it]100%|██████████| 3/3 [00:53<00:00, 17.80s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [441], Y: [1056115.4669452], extra_outputs: {}), UserFunctionResult(X: [441], Y: [1056115.4669452], extra_outputs: {}), UserFunctionResult(X: [441], Y: [1056115.4669452], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:46<01:33, 46.76s/it]100%|██████████| 3/3 [00:46<00:00, 15.59s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [0], Y: [3410993.29], extra_outputs: {}), UserFunctionResult(X: [0], Y: [3410993.29], extra_outputs: {}), UserFunctionResult(X: [0], Y: [3410993.29], extra_outputs: {})]
 INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.loop.outer_loop:Finished outer loop
@@ -1816,7 +1805,7 @@ INFO:emukit.core.loop.outer_loop:Finished outer loop
 successfully ran loop
 
 
-Best: [441.], Val: 1056115.4669452028
+Best: [351.], Val: 3280283.967089043
 
 Network Param Scenario: Baseline (20 % Discount), Surge Scenario: solar
 
@@ -1852,7 +1841,7 @@ Wind: 1.0, Solar: 1.0
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:51<25:05, 51.90s/it]  7%|▋         | 2/30 [00:52<10:10, 21.80s/it] 10%|█         | 3/30 [00:53<05:27, 12.12s/it] 13%|█▎        | 4/30 [00:53<03:16,  7.56s/it] 17%|█▋        | 5/30 [00:54<02:08,  5.16s/it] 20%|██        | 6/30 [01:46<08:28, 21.18s/it] 23%|██▎       | 7/30 [01:47<05:35, 14.57s/it] 27%|██▋       | 8/30 [01:48<03:45, 10.24s/it] 30%|███       | 9/30 [01:49<02:33,  7.33s/it] 33%|███▎      | 10/30 [01:51<01:48,  5.43s/it] 37%|███▋      | 11/30 [02:45<06:28, 20.44s/it] 40%|████      | 12/30 [02:47<04:24, 14.72s/it] 43%|████▎     | 13/30 [02:48<03:01, 10.69s/it] 47%|████▋     | 14/30 [02:49<02:06,  7.89s/it] 50%|█████     | 15/30 [02:51<01:31,  6.07s/it] 53%|█████▎    | 16/30 [03:48<04:56, 21.19s/it] 57%|█████▋    | 17/30 [03:50<03:21, 15.48s/it] 60%|██████    | 18/30 [03:52<02:16, 11.41s/it] 63%|██████▎   | 19/30 [03:54<01:33,  8.53s/it] 67%|██████▋   | 20/30 [03:56<01:06,  6.64s/it] 70%|███████   | 21/30 [04:49<03:05, 20.64s/it] 73%|███████▎  | 22/30 [04:52<02:01, 15.24s/it] 77%|███████▋  | 23/30 [04:54<01:19, 11.40s/it] 80%|████████  | 24/30 [04:56<00:51,  8.62s/it] 83%|████████▎ | 25/30 [04:59<00:34,  6.86s/it] 87%|████████▋ | 26/30 [05:54<01:24, 21.16s/it] 90%|█████████ | 27/30 [05:57<00:47, 15.82s/it] 93%|█████████▎| 28/30 [06:00<00:23, 11.90s/it] 97%|█████████▋| 29/30 [06:02<00:09,  9.03s/it]100%|██████████| 30/30 [06:04<00:00,  6.91s/it]100%|██████████| 30/30 [06:04<00:00, 12.15s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:49<24:08, 49.95s/it]  7%|▋         | 2/30 [00:50<09:44, 20.87s/it] 10%|█         | 3/30 [00:50<05:12, 11.56s/it] 13%|█▎        | 4/30 [00:51<03:05,  7.13s/it] 17%|█▋        | 5/30 [00:51<01:59,  4.77s/it] 20%|██        | 6/30 [01:41<08:04, 20.19s/it] 23%|██▎       | 7/30 [01:43<05:20, 13.94s/it] 27%|██▋       | 8/30 [01:44<03:36,  9.82s/it] 30%|███       | 9/30 [01:44<02:26,  6.96s/it] 33%|███▎      | 10/30 [01:45<01:43,  5.18s/it] 37%|███▋      | 11/30 [02:36<06:02, 19.07s/it] 40%|████      | 12/30 [02:38<04:07, 13.73s/it] 43%|████▎     | 13/30 [02:39<02:50, 10.04s/it] 47%|████▋     | 14/30 [02:40<01:56,  7.29s/it] 50%|█████     | 15/30 [02:42<01:24,  5.62s/it] 53%|█████▎    | 16/30 [03:33<04:29, 19.23s/it] 57%|█████▋    | 17/30 [03:35<03:03, 14.11s/it] 60%|██████    | 18/30 [03:37<02:05, 10.44s/it] 63%|██████▎   | 19/30 [03:38<01:24,  7.72s/it] 67%|██████▋   | 20/30 [03:40<01:00,  6.07s/it] 70%|███████   | 21/30 [04:32<02:56, 19.66s/it] 73%|███████▎  | 22/30 [04:34<01:56, 14.54s/it] 77%|███████▋  | 23/30 [04:37<01:16, 10.90s/it] 80%|████████  | 24/30 [04:38<00:48,  8.08s/it] 83%|████████▎ | 25/30 [04:41<00:32,  6.55s/it] 87%|████████▋ | 26/30 [05:33<01:20, 20.17s/it] 90%|█████████ | 27/30 [05:36<00:45, 15.06s/it] 93%|█████████▎| 28/30 [05:39<00:22, 11.36s/it] 97%|█████████▋| 29/30 [05:41<00:08,  8.45s/it]100%|██████████| 30/30 [05:43<00:00,  6.56s/it]100%|██████████| 30/30 [05:43<00:00, 11.44s/it]
 INFO:GP:initializing Y
 INFO:GP:initializing inference method
 INFO:GP:adding kernel and likelihood as parameters
@@ -1863,17 +1852,17 @@ INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[  0]
- [432]
- [432]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[431]
+ [431]
+ [431]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 365.0 seconds
+Getting 30 initial simulation points took 343.0 seconds
 
 CURRENT ATTEMPT #0
 
 okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:48<01:36, 48.27s/it] 67%|██████▋   | 2/3 [00:53<00:23, 23.16s/it]100%|██████████| 3/3 [00:53<00:00, 17.95s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [0], Y: [1242152.48], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:51<01:43, 51.89s/it]100%|██████████| 3/3 [00:51<00:00, 17.30s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [431], Y: [1055981.9965723], extra_outputs: {}), UserFunctionResult(X: [431], Y: [1055981.9965723], extra_outputs: {}), UserFunctionResult(X: [431], Y: [1055981.9965723], extra_outputs: {})]
 INFO:emukit.core.loop.outer_loop:Iteration 1
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
@@ -1883,7 +1872,7 @@ DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[432]
  [432]
  [432]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:55<01:51, 55.54s/it]100%|██████████| 3/3 [00:55<00:00, 18.53s/it]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:52<01:44, 52.33s/it] 67%|██████▋   | 2/3 [00:52<00:21, 21.61s/it]100%|██████████| 3/3 [00:52<00:00, 17.48s/it]
 DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
 INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
@@ -1892,7 +1881,7 @@ INFO:emukit.core.loop.outer_loop:Finished outer loop
 successfully ran loop
 
 
-Best: [432.], Val: 1055995.3436095843
+Best: [431.], Val: 1055981.9965722966
 
 Network Param Scenario: Baseline (20 % Discount), Surge Scenario: solar
 
@@ -1928,7 +1917,7 @@ Wind: 1.0, Solar: 1.2
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:52<25:16, 52.28s/it]  7%|▋         | 2/30 [00:52<10:11, 21.84s/it] 10%|█         | 3/30 [00:53<05:26, 12.09s/it] 13%|█▎        | 4/30 [00:53<03:13,  7.46s/it] 17%|█▋        | 5/30 [00:54<02:05,  5.01s/it] 20%|██        | 6/30 [01:47<08:32, 21.34s/it] 23%|██▎       | 7/30 [01:48<05:37, 14.67s/it] 27%|██▋       | 8/30 [01:49<03:47, 10.34s/it] 30%|███       | 9/30 [01:50<02:34,  7.37s/it] 33%|███▎      | 10/30 [01:51<01:50,  5.52s/it] 37%|███▋      | 11/30 [02:44<06:17, 19.87s/it] 40%|████      | 12/30 [02:45<04:15, 14.21s/it] 43%|████▎     | 13/30 [02:46<02:56, 10.36s/it] 47%|████▋     | 14/30 [02:47<02:01,  7.58s/it] 50%|█████     | 15/30 [02:49<01:28,  5.90s/it] 53%|█████▎    | 16/30 [03:42<04:39, 19.95s/it] 57%|█████▋    | 17/30 [03:44<03:07, 14.44s/it] 60%|██████    | 18/30 [03:46<02:08, 10.72s/it] 63%|██████▎   | 19/30 [03:47<01:27,  7.95s/it] 67%|██████▋   | 20/30 [03:50<01:03,  6.37s/it] 70%|███████   | 21/30 [04:43<03:02, 20.26s/it] 73%|███████▎  | 22/30 [04:45<01:58, 14.81s/it] 77%|███████▋  | 23/30 [04:47<01:17, 11.12s/it] 80%|████████  | 24/30 [04:49<00:50,  8.35s/it] 83%|████████▎ | 25/30 [04:52<00:34,  6.85s/it] 87%|████████▋ | 26/30 [05:47<01:24, 21.14s/it] 90%|█████████ | 27/30 [05:49<00:46, 15.55s/it] 93%|█████████▎| 28/30 [05:53<00:23, 11.85s/it] 97%|█████████▋| 29/30 [05:54<00:08,  8.85s/it]100%|██████████| 30/30 [05:57<00:00,  6.96s/it]100%|██████████| 30/30 [05:57<00:00, 11.92s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:49<24:08, 49.95s/it]  7%|▋         | 2/30 [00:50<09:44, 20.86s/it] 10%|█         | 3/30 [00:50<05:11, 11.54s/it] 13%|█▎        | 4/30 [00:51<03:07,  7.20s/it] 17%|█▋        | 5/30 [00:51<01:58,  4.74s/it] 20%|██        | 6/30 [01:42<08:05, 20.23s/it] 23%|██▎       | 7/30 [01:43<05:19, 13.91s/it] 27%|██▋       | 8/30 [01:43<03:34,  9.76s/it] 30%|███       | 9/30 [01:44<02:28,  7.05s/it] 33%|███▎      | 10/30 [01:45<01:43,  5.16s/it] 37%|███▋      | 11/30 [02:36<06:01, 19.05s/it] 40%|████      | 12/30 [02:37<04:05, 13.65s/it] 43%|████▎     | 13/30 [02:39<02:49,  9.95s/it] 47%|████▋     | 14/30 [02:40<01:58,  7.38s/it] 50%|█████     | 15/30 [02:41<01:23,  5.57s/it] 53%|█████▎    | 16/30 [03:33<04:29, 19.26s/it] 57%|█████▋    | 17/30 [03:34<03:01, 13.96s/it] 60%|██████    | 18/30 [03:36<02:04, 10.34s/it] 63%|██████▎   | 19/30 [03:38<01:25,  7.81s/it] 67%|██████▋   | 20/30 [03:40<01:00,  6.02s/it] 70%|███████   | 21/30 [04:31<02:56, 19.61s/it] 73%|███████▎  | 22/30 [04:33<01:54, 14.35s/it] 77%|███████▋  | 23/30 [04:36<01:15, 10.72s/it] 80%|████████  | 24/30 [04:38<00:49,  8.27s/it] 83%|████████▎ | 25/30 [04:40<00:32,  6.46s/it] 87%|████████▋ | 26/30 [05:32<01:19, 19.99s/it] 90%|█████████ | 27/30 [05:34<00:44, 14.75s/it] 93%|█████████▎| 28/30 [05:37<00:22, 11.06s/it] 97%|█████████▋| 29/30 [05:39<00:08,  8.50s/it]100%|██████████| 30/30 [05:41<00:00,  6.47s/it]100%|██████████| 30/30 [05:41<00:00, 11.39s/it]
 INFO:GP:initializing Y
 INFO:GP:initializing inference method
 INFO:GP:adding kernel and likelihood as parameters
@@ -1939,69 +1928,36 @@ INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[431]
- [431]
- [431]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[404]
+ [404]
+ [404]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 358.0 seconds
+Getting 30 initial simulation points took 342.0 seconds
 
 CURRENT ATTEMPT #0
 
 okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:58<01:56, 58.03s/it]100%|██████████| 3/3 [00:58<00:00, 19.37s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [431], Y: [1055981.9965723], extra_outputs: {}), UserFunctionResult(X: [431], Y: [1055981.9965723], extra_outputs: {}), UserFunctionResult(X: [431], Y: [1055981.9965723], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:51<01:42, 51.38s/it]100%|██████████| 3/3 [00:51<00:00, 17.15s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [404], Y: [-293188.57443455], extra_outputs: {}), UserFunctionResult(X: [404], Y: [-293188.57443455], extra_outputs: {}), UserFunctionResult(X: [404], Y: [-293188.57443455], extra_outputs: {})]
 INFO:emukit.core.loop.outer_loop:Iteration 1
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[ 999]
- [1000]
- [ 999]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[424]
+ [424]
+ [424]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [01:12<02:24, 72.46s/it] 67%|██████▋   | 2/3 [01:12<00:29, 29.93s/it]100%|██████████| 3/3 [01:12<00:00, 24.21s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [999], Y: [1184679.09825341], extra_outputs: {}), UserFunctionResult(X: [1000], Y: [1185128.0202907], extra_outputs: {}), UserFunctionResult(X: [999], Y: [1184679.09825341], extra_outputs: {})]
-INFO:emukit.core.loop.outer_loop:Iteration 2
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[1]
- [2]
- [1]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:57<01:55, 57.67s/it]100%|██████████| 3/3 [00:57<00:00, 19.23s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [1], Y: [1241268.54253729], extra_outputs: {}), UserFunctionResult(X: [2], Y: [1240393.31657458], extra_outputs: {}), UserFunctionResult(X: [1], Y: [1241268.54253729], extra_outputs: {})]
-INFO:emukit.core.loop.outer_loop:Iteration 3
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[1000]
- [ 999]
- [1000]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [01:15<02:31, 75.67s/it]100%|██████████| 3/3 [01:15<00:00, 25.22s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [1000], Y: [1185128.0202907], extra_outputs: {}), UserFunctionResult(X: [999], Y: [1184679.09825341], extra_outputs: {}), UserFunctionResult(X: [1000], Y: [1185128.0202907], extra_outputs: {})]
-INFO:emukit.core.loop.outer_loop:Iteration 4
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[1]
- [1]
- [1]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:57<01:55, 57.77s/it]100%|██████████| 3/3 [00:57<00:00, 19.26s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [1], Y: [1241268.54253729], extra_outputs: {}), UserFunctionResult(X: [1], Y: [1241268.54253729], extra_outputs: {}), UserFunctionResult(X: [1], Y: [1241268.54253729], extra_outputs: {})]
-INFO:emukit.core.loop.stopping_conditions:Stopped after 5 evaluations
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:51<01:42, 51.49s/it]100%|██████████| 3/3 [00:51<00:00, 13.41s/it]100%|██████████| 3/3 [00:51<00:00, 17.22s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [424], Y: [-293165.55568874], extra_outputs: {}), UserFunctionResult(X: [424], Y: [-293165.55568874], extra_outputs: {}), UserFunctionResult(X: [424], Y: [-293165.55568874], extra_outputs: {})]
+INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.loop.outer_loop:Finished outer loop
 
 successfully ran loop
 
 
-Best: [431.], Val: 1055981.9965722966
+Best: [413.79310345], Val: -293225.25809893623
 
 Network Param Scenario: Baseline (20 % Discount), Surge Scenario: solar
 
@@ -2037,7 +1993,7 @@ Wind: 1.0, Solar: 1.7
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:59<28:47, 59.55s/it]  7%|▋         | 2/30 [00:59<11:33, 24.78s/it] 10%|█         | 3/30 [01:00<06:12, 13.79s/it] 13%|█▎        | 4/30 [01:01<03:43,  8.59s/it] 17%|█▋        | 5/30 [01:01<02:20,  5.64s/it] 20%|██        | 6/30 [01:58<09:13, 23.07s/it] 23%|██▎       | 7/30 [01:59<06:03, 15.80s/it] 27%|██▋       | 8/30 [02:00<04:06, 11.22s/it] 30%|███       | 9/30 [02:02<02:49,  8.06s/it] 33%|███▎      | 10/30 [02:02<01:57,  5.86s/it] 37%|███▋      | 11/30 [03:00<06:49, 21.57s/it] 40%|████      | 12/30 [03:01<04:37, 15.41s/it] 43%|████▎     | 13/30 [03:03<03:14, 11.42s/it] 47%|████▋     | 14/30 [03:05<02:15,  8.46s/it] 50%|█████     | 15/30 [03:06<01:35,  6.36s/it] 53%|█████▎    | 16/30 [04:03<05:02, 21.58s/it] 57%|█████▋    | 17/30 [04:05<03:21, 15.50s/it] 60%|██████    | 18/30 [04:07<02:19, 11.63s/it] 63%|██████▎   | 19/30 [04:09<01:36,  8.77s/it] 67%|██████▋   | 20/30 [04:11<01:07,  6.71s/it] 70%|███████   | 21/30 [05:07<03:12, 21.36s/it] 73%|███████▎  | 22/30 [05:08<02:03, 15.42s/it] 77%|███████▋  | 23/30 [05:12<01:22, 11.80s/it] 80%|████████  | 24/30 [05:14<00:54,  9.01s/it] 83%|████████▎ | 25/30 [05:16<00:34,  6.94s/it] 87%|████████▋ | 26/30 [06:10<01:23, 20.96s/it] 90%|█████████ | 27/30 [06:12<00:45, 15.23s/it] 93%|█████████▎| 28/30 [06:15<00:23, 11.76s/it] 97%|█████████▋| 29/30 [06:18<00:09,  9.03s/it]100%|██████████| 30/30 [06:20<00:00,  6.78s/it]100%|██████████| 30/30 [06:20<00:00, 12.67s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:50<24:15, 50.20s/it]  7%|▋         | 2/30 [00:50<09:46, 20.95s/it] 10%|█         | 3/30 [00:51<05:11, 11.54s/it] 13%|█▎        | 4/30 [00:51<03:06,  7.17s/it] 17%|█▋        | 5/30 [00:51<01:58,  4.74s/it] 20%|██        | 6/30 [01:44<08:20, 20.87s/it] 23%|██▎       | 7/30 [01:45<05:30, 14.38s/it] 27%|██▋       | 8/30 [01:45<03:40, 10.03s/it] 30%|███       | 9/30 [01:46<02:30,  7.19s/it] 33%|███▎      | 10/30 [01:47<01:45,  5.26s/it] 37%|███▋      | 11/30 [02:39<06:08, 19.40s/it] 40%|████      | 12/30 [02:40<04:10, 13.94s/it] 43%|████▎     | 13/30 [02:41<02:50, 10.06s/it] 47%|████▋     | 14/30 [02:43<01:58,  7.41s/it] 50%|█████     | 15/30 [02:44<01:24,  5.63s/it] 53%|█████▎    | 16/30 [03:36<04:32, 19.45s/it] 57%|█████▋    | 17/30 [03:37<03:04, 14.16s/it] 60%|██████    | 18/30 [03:39<02:03, 10.31s/it] 63%|██████▎   | 19/30 [03:41<01:25,  7.77s/it] 67%|██████▋   | 20/30 [03:43<01:00,  6.07s/it] 70%|███████   | 21/30 [04:34<02:58, 19.78s/it] 73%|███████▎  | 22/30 [04:37<01:56, 14.52s/it] 77%|███████▋  | 23/30 [04:39<01:14, 10.70s/it] 80%|████████  | 24/30 [04:41<00:48,  8.16s/it] 83%|████████▎ | 25/30 [04:43<00:32,  6.45s/it] 87%|████████▋ | 26/30 [05:36<01:20, 20.21s/it] 90%|█████████ | 27/30 [05:38<00:44, 14.97s/it] 93%|█████████▎| 28/30 [05:40<00:22, 11.04s/it] 97%|█████████▋| 29/30 [05:42<00:08,  8.39s/it]100%|██████████| 30/30 [05:44<00:00,  6.41s/it]100%|██████████| 30/30 [05:44<00:00, 11.49s/it]
 INFO:GP:initializing Y
 INFO:GP:initializing inference method
 INFO:GP:adding kernel and likelihood as parameters
@@ -2048,28 +2004,28 @@ INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[432]
- [432]
- [432]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[367]
+ [367]
+ [  0]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 380.0 seconds
+Getting 30 initial simulation points took 345.0 seconds
 
 CURRENT ATTEMPT #0
 
 okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:53<01:47, 53.90s/it] 67%|██████▋   | 2/3 [00:54<00:22, 22.26s/it]100%|██████████| 3/3 [00:54<00:00, 18.00s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:50<01:41, 50.92s/it]100%|██████████| 3/3 [00:50<00:00, 16.98s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [367], Y: [-3445480.1713143], extra_outputs: {}), UserFunctionResult(X: [367], Y: [-3445480.1713143], extra_outputs: {}), UserFunctionResult(X: [0], Y: [-3332633.9], extra_outputs: {})]
 INFO:emukit.core.loop.outer_loop:Iteration 1
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
 INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[432]
- [432]
- [432]]
+DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[354]
+ [354]
+ [354]]
 INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:53<01:46, 53.24s/it]100%|██████████| 3/3 [00:53<00:00, 17.76s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:51<01:42, 51.14s/it]100%|██████████| 3/3 [00:51<00:00, 17.05s/it]
+DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [354], Y: [-3445427.18379909], extra_outputs: {}), UserFunctionResult(X: [354], Y: [-3445427.18379909], extra_outputs: {}), UserFunctionResult(X: [354], Y: [-3445427.18379909], extra_outputs: {})]
 INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
 INFO:emukit.core.loop.model_updaters:Updating parameters of the model
 INFO:emukit.core.loop.outer_loop:Finished outer loop
@@ -2077,7 +2033,7 @@ INFO:emukit.core.loop.outer_loop:Finished outer loop
 successfully ran loop
 
 
-Best: [432.], Val: 1055995.3436095843
+Best: [367.], Val: -3445480.1713143
 
 Network Param Scenario: Baseline (20 % Discount), Surge Scenario: solar
 
@@ -2113,156 +2069,4 @@ Wind: 1.0, Solar: 2.0
  [ 931.03448276]
  [ 965.51724138]
  [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:51<24:54, 51.53s/it]  7%|▋         | 2/30 [00:51<10:00, 21.45s/it] 10%|█         | 3/30 [00:52<05:20, 11.88s/it] 13%|█▎        | 4/30 [00:52<03:10,  7.33s/it] 17%|█▋        | 5/30 [00:53<02:02,  4.90s/it] 20%|██        | 6/30 [01:45<08:20, 20.85s/it] 23%|██▎       | 7/30 [01:45<05:28, 14.27s/it] 27%|██▋       | 8/30 [01:46<03:40, 10.02s/it] 30%|███       | 9/30 [01:47<02:30,  7.16s/it] 33%|███▎      | 10/30 [01:48<01:46,  5.31s/it] 37%|███▋      | 11/30 [02:41<06:14, 19.73s/it] 40%|████      | 12/30 [02:42<04:13, 14.07s/it] 43%|████▎     | 13/30 [02:43<02:54, 10.24s/it] 47%|████▋     | 14/30 [02:45<02:00,  7.52s/it] 50%|█████     | 15/30 [02:46<01:27,  5.81s/it] 53%|█████▎    | 16/30 [03:40<04:43, 20.24s/it] 57%|█████▋    | 17/30 [03:42<03:10, 14.65s/it] 60%|██████    | 18/30 [03:44<02:09, 10.83s/it] 63%|██████▎   | 19/30 [03:45<01:28,  8.05s/it] 67%|██████▋   | 20/30 [03:48<01:03,  6.40s/it] 70%|███████   | 21/30 [04:42<03:05, 20.62s/it] 73%|███████▎  | 22/30 [04:44<02:00, 15.04s/it] 77%|███████▋  | 23/30 [04:46<01:18, 11.26s/it] 80%|████████  | 24/30 [04:48<00:50,  8.48s/it] 83%|████████▎ | 25/30 [04:51<00:34,  6.89s/it] 87%|████████▋ | 26/30 [05:50<01:30, 22.54s/it] 90%|█████████ | 27/30 [05:53<00:49, 16.63s/it] 93%|█████████▎| 28/30 [05:56<00:25, 12.60s/it] 97%|█████████▋| 29/30 [05:59<00:09,  9.53s/it]100%|██████████| 30/30 [06:03<00:00,  7.90s/it]100%|██████████| 30/30 [06:03<00:00, 12.11s/it]
-INFO:GP:initializing Y
-INFO:GP:initializing inference method
-INFO:GP:adding kernel and likelihood as parameters
-INFO:emukit.bayesian_optimization.loops.bayesian_optimization_loop:Batch size is 3, using LocalPenalizationPointCalculator
-INFO:emukit.core.loop.outer_loop:Starting outer loop
-INFO:emukit.core.loop.outer_loop:Iteration 0
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[0]
- [0]
- [0]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 363.0 seconds
-
-CURRENT ATTEMPT #0
-
-okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:57<01:55, 57.53s/it]100%|██████████| 3/3 [00:57<00:00, 19.21s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [0], Y: [1242152.48], extra_outputs: {}), UserFunctionResult(X: [0], Y: [1242152.48], extra_outputs: {}), UserFunctionResult(X: [0], Y: [1242152.48], extra_outputs: {})]
-INFO:emukit.core.loop.outer_loop:Iteration 1
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[432]
- [432]
- [432]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [01:03<02:07, 63.69s/it] 67%|██████▋   | 2/3 [01:03<00:26, 26.38s/it]100%|██████████| 3/3 [01:03<00:00, 21.32s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {}), UserFunctionResult(X: [432], Y: [1055995.34360958], extra_outputs: {})]
-INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.loop.outer_loop:Finished outer loop
-
-successfully ran loop
-
-
-Best: [432.], Val: 1055995.3436095843
-
-Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
-
-Wind: 0.1, Solar: 1.0
-
-[[   0.        ]
- [  34.48275862]
- [  68.96551724]
- [ 103.44827586]
- [ 137.93103448]
- [ 172.4137931 ]
- [ 206.89655172]
- [ 241.37931034]
- [ 275.86206897]
- [ 310.34482759]
- [ 344.82758621]
- [ 379.31034483]
- [ 413.79310345]
- [ 448.27586207]
- [ 482.75862069]
- [ 517.24137931]
- [ 551.72413793]
- [ 586.20689655]
- [ 620.68965517]
- [ 655.17241379]
- [ 689.65517241]
- [ 724.13793103]
- [ 758.62068966]
- [ 793.10344828]
- [ 827.5862069 ]
- [ 862.06896552]
- [ 896.55172414]
- [ 931.03448276]
- [ 965.51724138]
- [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [01:00<29:25, 60.88s/it]  7%|▋         | 2/30 [01:01<11:49, 25.32s/it] 10%|█         | 3/30 [01:01<06:16, 13.95s/it] 13%|█▎        | 4/30 [01:02<03:44,  8.63s/it] 17%|█▋        | 5/30 [01:02<02:23,  5.74s/it] 20%|██        | 6/30 [02:04<09:53, 24.74s/it] 23%|██▎       | 7/30 [02:05<06:31, 17.00s/it] 27%|██▋       | 8/30 [02:06<04:21, 11.88s/it] 30%|███       | 9/30 [02:07<02:57,  8.44s/it] 33%|███▎      | 10/30 [02:08<02:04,  6.24s/it] 37%|███▋      | 11/30 [03:11<07:30, 23.69s/it] 40%|████      | 12/30 [03:13<05:05, 16.98s/it] 43%|████▎     | 13/30 [03:14<03:27, 12.22s/it] 47%|████▋     | 14/30 [03:16<02:22,  8.93s/it] 50%|█████     | 15/30 [03:18<01:43,  6.89s/it] 53%|█████▎    | 16/30 [04:19<05:24, 23.21s/it] 57%|█████▋    | 17/30 [04:21<03:39, 16.89s/it] 60%|██████    | 18/30 [04:23<02:27, 12.30s/it] 63%|██████▎   | 19/30 [04:25<01:40,  9.16s/it] 67%|██████▋   | 20/30 [04:27<01:12,  7.23s/it] 70%|███████   | 21/30 [05:25<03:21, 22.44s/it] 73%|███████▎  | 22/30 [05:28<02:12, 16.53s/it] 77%|███████▋  | 23/30 [05:30<01:25, 12.17s/it] 80%|████████  | 24/30 [05:32<00:54,  9.16s/it] 83%|████████▎ | 25/30 [05:35<00:36,  7.36s/it] 87%|████████▋ | 26/30 [06:35<01:31, 22.98s/it] 90%|█████████ | 27/30 [06:38<00:51, 17.21s/it] 93%|█████████▎| 28/30 [06:41<00:25, 12.84s/it] 97%|█████████▋| 29/30 [06:44<00:09,  9.78s/it]100%|██████████| 30/30 [06:47<00:00,  7.88s/it]100%|██████████| 30/30 [06:47<00:00, 13.59s/it]
-INFO:GP:initializing Y
-INFO:GP:initializing inference method
-INFO:GP:adding kernel and likelihood as parameters
-INFO:emukit.bayesian_optimization.loops.bayesian_optimization_loop:Batch size is 3, using LocalPenalizationPointCalculator
-INFO:emukit.core.loop.outer_loop:Starting outer loop
-INFO:emukit.core.loop.outer_loop:Iteration 0
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[289]
- [289]
- [289]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-Getting 30 initial simulation points took 408.0 seconds
-
-CURRENT ATTEMPT #0
-
-okay to optimize
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:55<01:51, 55.93s/it]100%|██████████| 3/3 [00:55<00:00, 18.65s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [289], Y: [8102448.97677699], extra_outputs: {}), UserFunctionResult(X: [289], Y: [8102448.97677699], extra_outputs: {}), UserFunctionResult(X: [289], Y: [8102448.97677699], extra_outputs: {})]
-INFO:emukit.core.loop.outer_loop:Iteration 1
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-INFO:emukit.core.optimization.gradient_acquisition_optimizer:Starting gradient-based optimization of acquisition function <class 'emukit.core.acquisition.acquisition.Sum'>
-DEBUG:emukit.core.loop.outer_loop:Next suggested point(s): [[1]
- [0]
- [0]]
-INFO:emukit.core.loop.user_function:Evaluating user function for 3 point(s)
-  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:48<01:37, 48.89s/it]100%|██████████| 3/3 [00:48<00:00, 16.30s/it]
-DEBUG:emukit.core.loop.outer_loop:User function returned: [UserFunctionResult(X: [1], Y: [8175092.00003726], extra_outputs: {}), UserFunctionResult(X: [0], Y: [8175583.92], extra_outputs: {}), UserFunctionResult(X: [0], Y: [8175583.92], extra_outputs: {})]
-INFO:emukit.core.loop.stopping_conditions:Stopped as consecutive evaluations are within 0.01
-INFO:emukit.core.loop.model_updaters:Updating parameters of the model
-INFO:emukit.core.loop.outer_loop:Finished outer loop
-
-successfully ran loop
-
-
-Best: [310.34482759], Val: 8102197.8630601475
-
-Network Param Scenario: Baseline (20 % Discount), Surge Scenario: wind
-
-Wind: 0.5, Solar: 1.0
-
-[[   0.        ]
- [  34.48275862]
- [  68.96551724]
- [ 103.44827586]
- [ 137.93103448]
- [ 172.4137931 ]
- [ 206.89655172]
- [ 241.37931034]
- [ 275.86206897]
- [ 310.34482759]
- [ 344.82758621]
- [ 379.31034483]
- [ 413.79310345]
- [ 448.27586207]
- [ 482.75862069]
- [ 517.24137931]
- [ 551.72413793]
- [ 586.20689655]
- [ 620.68965517]
- [ 655.17241379]
- [ 689.65517241]
- [ 724.13793103]
- [ 758.62068966]
- [ 793.10344828]
- [ 827.5862069 ]
- [ 862.06896552]
- [ 896.55172414]
- [ 931.03448276]
- [ 965.51724138]
- [1000.        ]]
-  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:51<25:06, 51.94s/it]  7%|▋         | 2/30 [00:52<10:04, 21.60s/it] 10%|█         | 3/30 [00:52<05:21, 11.91s/it] 13%|█▎        | 4/30 [00:53<03:12,  7.40s/it] 17%|█▋        | 5/30 [00:53<02:02,  4.89s/it] 20%|██        | 6/30 [01:46<08:30, 21.26s/it] 23%|██▎       | 7/30 [01:47<05:34, 14.53s/it] 27%|██▋       | 8/30 [01:48<03:44, 10.21s/it] 30%|███       | 9/30 [01:49<02:33,  7.32s/it] 33%|███▎      | 10/30 [01:50<01:47,  5.37s/it] 37%|███▋      | 11/30 [02:43<06:22, 20.13s/it] 40%|████      | 12/30 [02:44<04:17, 14.30s/it] 43%|████▎     | 13/30 [02:46<02:55, 10.34s/it] 47%|████▋     | 14/30 [02:47<02:02,  7.67s/it] 50%|█████     | 15/30 [02:49<01:27,  5.80s/it] 53%|█████▎    | 16/30 [03:43<04:48, 20.58s/it] 57%|█████▋    | 17/30 [03:45<03:11, 14.73s/it] 60%|██████    | 18/30 [03:46<02:09, 10.81s/it] 63%|██████▎   | 19/30 [03:48<01:30,  8.25s/it] 67%|██████▋   | 20/30 [03:51<01:03,  6.40s/it] 70%|███████   | 21/30 [04:46<03:10, 21.13s/it] 73%|███████▎  | 22/30 [04:47<02:01, 15.19s/it] 77%|███████▋  | 23/30 [04:50<01:19, 11.30s/it] 80%|████████  | 24/30 [04:52<00:52,  8.75s/it] 83%|████████▎ | 25/30 [04:55<00:34,  6.80s/it]
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:50<24:25, 50.54s/it]  7%|▋         | 2/30 [00:50<09:49, 21.05s/it] 10%|█         | 3/30 [00:51<05:13, 11.62s/it] 13%|█▎        | 4/30 [00:51<03:07,  7.21s/it] 17%|█▋        | 5/30 [00:52<01:59,  4.78s/it] 20%|██        | 6/30 [01:43<08:13, 20.57s/it] 23%|██▎       | 7/30 [01:44<05:25, 14.14s/it] 27%|██▋       | 8/30 [01:45<03:37,  9.88s/it] 30%|███       | 9/30 [01:45<02:28,  7.05s/it] 33%|███▎      | 10/30 [01:46<01:43,  5.15s/it] 37%|███▋      | 11/30 [02:37<06:05, 19.22s/it] 40%|████      | 12/30 [02:39<04:08, 13.80s/it] 43%|████▎     | 13/30 [02:40<02:49,  9.97s/it] 47%|████▋     | 14/30 [02:41<01:56,  7.29s/it] 50%|█████     | 15/30 [02:43<01:22,  5.52s/it] 53%|█████▎    | 16/30 [03:34<04:30, 19.35s/it] 57%|█████▋    | 17/30 [03:36<03:03, 14.10s/it] 60%|██████    | 18/30 [03:37<02:03, 10.30s/it] 63%|██████▎   | 19/30 [03:39<01:24,  7.68s/it] 67%|██████▋   | 20/30 [03:41<00:59,  5.95s/it] 70%|███████   | 21/30 [04:33<02:57, 19.76s/it] 73%|███████▎  | 22/30 [04:35<01:55, 14.49s/it] 77%|███████▋  | 23/30 [04:37<01:15, 10.74s/it] 80%|████████  | 24/30 [04:39<00:48,  8.06s/it] 83%|████████▎ | 25/30 [04:41<00:31,  6.36s/it] 87%|████████▋ | 26/30 [05:34<01:21, 20.38s/it] 90%|█████████ | 27/30 [05:37<00:45, 15.07s/it] 93%|█████████▎| 28/30 [05:39<00:22, 11.24s/it]
