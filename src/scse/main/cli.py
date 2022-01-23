@@ -30,7 +30,12 @@ class MiniSCOTDebuggerApp(cmd2.Cmd):
                     profile=DEFAULT_RUN_PARAMETERS.run_profile,
                     num_batteries=DEFAULT_RUN_PARAMETERS.num_batteries,
                     max_battery_capacity=DEFAULT_RUN_PARAMETERS.max_battery_capacity,
-                    battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty)
+                    battery_penalty=DEFAULT_RUN_PARAMETERS.battery_penalty,
+                    discharge_discount=DEFAULT_RUN_PARAMETERS.discharge_discount,
+                    charging_discount=DEFAULT_RUN_PARAMETERS.charging_discount,
+                    surge_modulator=DEFAULT_RUN_PARAMETERS.surge_modulator,
+                    solar_surge_modulator=DEFAULT_RUN_PARAMETERS.solar_surge_modulator,
+                    surge_scenario=DEFAULT_RUN_PARAMETERS.surge_scenario)
 
         self._set_prompt()
 
@@ -80,6 +85,36 @@ class MiniSCOTDebuggerApp(cmd2.Cmd):
             f"penalty for the addition of a new battery (default {DEFAULT_RUN_PARAMETERS.battery_penalty})"
         ),
         type=int, default=DEFAULT_RUN_PARAMETERS.battery_penalty)
+    param_parser.add_argument(
+        '--surge_modulator',
+        help=(
+            f"scalar factor on offshore wind supply (default {DEFAULT_RUN_PARAMETERS.surge_modulator})"
+        ),
+        type=float, default=DEFAULT_RUN_PARAMETERS.surge_modulator)
+    param_parser.add_argument(
+        '--solar_surge_modulator',
+        help=(
+            f"scalar factor on solar supply  (default {DEFAULT_RUN_PARAMETERS.solar_surge_modulator})"
+        ),
+        type=float, default=DEFAULT_RUN_PARAMETERS.solar_surge_modulator)
+    param_parser.add_argument(
+        '--surge_scenario',
+        help=(
+            f"which scenario to in options wind, solar, wind+solar (default {DEFAULT_RUN_PARAMETERS.surge_scenario})"
+        ),
+        type=str, default=DEFAULT_RUN_PARAMETERS.surge_scenario)
+    param_parser.add_argument(
+        '--charging_discount',
+        help=(
+            f"discount on the charging penalty for a battery (default {DEFAULT_RUN_PARAMETERS.charging_discount})"
+        ),
+        type=float, default=DEFAULT_RUN_PARAMETERS.charging_discount)
+    param_parser.add_argument(
+        '--discharge_discount',
+        help=(
+            f"discount on the discharging reward for a battery (default {DEFAULT_RUN_PARAMETERS.discharge_discount})"
+        ),
+        type=float, default=DEFAULT_RUN_PARAMETERS.discharge_discount)
     #param_parser.add_argument('-asin', help="list of ASINs.", action='append', default=_DEFAULT_ASIN_LIST)
 
     @cmd2.with_argparser(param_parser)
@@ -92,7 +127,12 @@ class MiniSCOTDebuggerApp(cmd2.Cmd):
                     asin_selection=args.asin_selection,
                     profile=args.profile,
                     num_batteries=args.num_batteries,
-                    max_battery_capacity=args.max_battery_capacity)
+                    max_battery_capacity=args.max_battery_capacity,
+                    surge_modulator=args.surge_modulator,
+                    surge_scenario=args.surge_scenario,
+                    solar_surge_modulator=args.solar_surge_modulator,
+                    charging_discount=args.charging_discount,
+                    discharge_discount=args.discharge_discount)
 
     def do_next(self, arguments):
         """Execute a single time unit."""
