@@ -57,12 +57,12 @@ all_scenarios = {"Baseline (20 % Discount)": {"discharge_discount": 0.8,
 
 # ["Baseline (20 % Discount)", "33 % Discount"]
 network_param_scenarios = ["33 % Discount"]
-surge_scenarios = ["solar"]  # ["wind+solar"]
+surge_scenarios = ["wind+solar"]
 
 # univariate_surge = [0.1, 0.3, 0.5, 0.7, 0.9, 1.0, 1.2, 1.5, 2.0, 3.0]
-univariate_surge = [1.0, 1.2, 1.7, 2.0]  # [0.1, 0.5, 0.7, 1.0, 1.2, 1.7, 2.0]
+univariate_surge = [0.1, 0.5, 0.7, 1.0, 1.2, 1.7, 2.0]
 
-bivariate_surge = list(itertools.product([1.2, 1.5, 2.5], [0.1, 0.3, 0.7]))
+bivariate_surge = list(itertools.product([1.5, 2.5], [0.1, 0.3, 0.7]))
 
 # surge vals stored as (wind_mod, solar_mod)
 
@@ -121,7 +121,7 @@ def plot_reward(X, Y, labels):
 
 # In[10]:
 
-for num_days in [30]:
+for num_days in [10]:
 
     time_horizon_value = timesteps_per_day*num_days
 
