@@ -2,6 +2,25 @@ import numpy as np
 from matplotlib import pyplot as plt
 from pylab import *
 
+surge_modulator = 1.0
+all_scenarios = {"Baseline (20 % Discount)": {"discharge_discount": 0.8,
+                                              "charging_discount": 1.05,
+                                              "surge_modulator": surge_modulator},
+                 "25 % Discount": {"discharge_discount": 0.75,
+                                   "charging_discount": 1.05,
+                                   "surge_modulator": surge_modulator},
+                 "33 % Discount": {"discharge_discount": 0.67,
+                                   "charging_discount": 1.05,
+                                   "surge_modulator": surge_modulator},
+                 "33 % Discount +": {"discharge_discount": 0.67,
+                                     "charging_discount": 1.0,
+                                     "surge_modulator": surge_modulator},
+                 "50 % Discount": {"discharge_discount": 0.5,
+                                   "charging_discount": 1.05,
+                                   "surge_modulator": surge_modulator}}
+
+possible_scenarios = list(all_scenarios.keys())
+
 
 def plot_3d_boundary(X, Y, mesh_X, mesh_Y,
                      mu_plot, var_plot,
@@ -34,6 +53,11 @@ def plot_3d_boundary(X, Y, mesh_X, mesh_Y,
         ax.scatter(new_X[:, 0].flatten(), new_X[:, 1].flatten(),
                    new_Y.flatten(), marker="x", color="r", label="All observations", s=100)
 
+        min_X = new_X[np.argmin(new_Y)]
+        min_Y = np.min(new_Y)
+        ax.scatter(min_X[0], min_X[1], min_Y, c='black',
+                   marker='D', label="Minimum", s=200)
+
     ax.grid(True)
 
     ax.set_xlabel("Num batteries")
@@ -48,7 +72,7 @@ def plot_3d_boundary(X, Y, mesh_X, mesh_Y,
 
     if title:
         plt.title(title)
-    plt.legend(loc='upper right', prop={'size': 20})
+    plt.legend(loc='upper right', prop={'size': 15})
 
     if save_fig_path:
         for theta in range(0, 360, 10):
@@ -91,7 +115,7 @@ def plot_3d_observed_rewards(X, Y,
         im = ax.plot_trisurf(X[:, 0].flatten(), X[:, 1].flatten(
         ), Y.flatten(), cmap='viridis', alpha=0.70)
 
-    ax.legend(loc=1, prop={'size': 20})
+    ax.legend(loc=1, prop={'size': 15})
     ax.set_xlabel("Num batteries")
     ax.set_ylabel("Battery capacity (MWh)")
     ax.set_zlabel("Cumulative reward (£)")
